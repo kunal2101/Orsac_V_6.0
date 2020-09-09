@@ -392,6 +392,7 @@ public class SearchVehicleWise extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pbHeaderProgress = (ProgressBar) findViewById(R.id.progress_bar);
+            Log.d ( "Test Push","Test Push" );
         }
 
         protected String doInBackground(String... args) {
