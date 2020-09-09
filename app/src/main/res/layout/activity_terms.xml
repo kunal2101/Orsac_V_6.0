@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_orsac" />
+    <WebView
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolBar"
+        android:textColor="@color/primary_text"
+    />
+    <LinearLayout
+        android:id="@+id/lin_acc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/terms"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/reject"
+            style="@style/btn_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="REJECT"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/accep"
+            style="@style/btn_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="ACCEPT"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/rose_footer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:layout_below="@+id/lin_acc"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Powered By Orsac"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+<!--
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/terms"
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+-->
+</RelativeLayout>

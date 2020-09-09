@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#76000000">
+
+
+    <ImageView
+        android:id="@+id/tool_back_icon"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/leftarrowarrows"
+         />
+    <customfonts.MyTextView
+        android:id="@+id/tool_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:text="Fare Estimate"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_launcher"
+        android:textColor="#fff"
+        android:textSize="14dp" />
+
+
+</android.support.v7.widget.Toolbar>

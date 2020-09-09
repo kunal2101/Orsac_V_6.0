@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar_orsac"
+        android:id="@+id/toolBar"/>
+
+    <TextView
+        android:id="@+id/rose_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Design &amp; Developed By Rosmerta Technologies Ltd."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cir_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#1A78A5"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:text="CircleWise Dashboard"
+        android:layout_below="@+id/toolBar"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_below="@+id/cir_title"
+        android:layout_above="@+id/rose_footer"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/viewpager"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/vDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

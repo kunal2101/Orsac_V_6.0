@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="orsac.rosmerta.orsac_vehicle.android.SearchVehicleWise">
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_orsac" />
+    <LinearLayout
+        android:id="@+id/line_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splaxe"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lin_tot_install"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/back_red"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tot_avi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.0500"
+                android:shadowColor="@color/black"
+                android:shadowDy="-4"
+                android:shadowRadius="4"
+                android:text="-----"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+
+                android:textStyle="italic|bold" />
+            <customfonts.MyTextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of i3MS Registered Trucks with VTU Fitted"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:visibility="gone"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+            </ProgressBar>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A237E" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/etp_in_180"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="----"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Without Etp in 90 Days"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".8"
+                android:background="#009688"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/live_vtu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0250"
+
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="----"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current ETPs Issued"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+
+
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ACACAC" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/back_red"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#1E88E5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/operational_truck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="----"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Effective Operational Trucks in Last 90 Days"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A237E" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#E65100"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/active_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="----"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trucks with Active VTUs"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".8"
+                android:background="#E65100"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/non_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0250"
+
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="----"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trucks with InActive VTUs "
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A237E" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+ android:layout_marginBottom="100dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Please Enter Your Vehicle No :-"/>
+    <LinearLayout
+        android:id="@+id/lin_one"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search_curve_rect"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:tag="sticky">
+
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28.3dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_launcher" />
+
+        <EditText
+            android:id="@+id/vehicle_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="14.3dp"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:singleLine="true"
+            android:hint="Enter Vehicle No/Serial No."
+            android:textColor="#373737"
+            android:textSize="16.7sp" />
+
+        <ImageView
+            android:id="@+id/serch_btn"
+            android:layout_width="15dp"
+            android:layout_height="21.3dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="16.3dp"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="#373737" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/search_btn_main"
+        style="@style/btn_primary"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="SEARCH"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/msg_btn"
+            style="@style/btn_primary"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="SEND SMS"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/rating_btn"
+            style="@style/btn_primary"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingRight="20dp"
+            android:visibility="visible"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Vendor Ratings &amp; Info"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:layout_marginBottom="10dp"/>
+
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+    <TextView
+        android:id="@+id/textView_version_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Powered By ORSAC - V-.-.-."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <FrameLayout
+        android:id="@+id/frame_floating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        android:layout_marginLeft="1dp">
+
+
+        <ImageView
+            android:id="@+id/home_page"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:src="@drawable/rect2" />
+
+
+        <ImageView
+            android:id="@+id/img_search"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
+            android:paddingLeft="3dp"
+
+            android:src="@drawable/ic_action_1034146" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_device_managment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="20dp"
+
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp">
+
+
+        <ImageView
+            android:id="@+id/device_home_page"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:src="@drawable/rect2" />
+
+
+        <ImageView
+            android:id="@+id/device_img_search"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
+            android:paddingLeft="3dp"
+
+            android:src="@drawable/ic_about_us" />
+
+
+    </FrameLayout>
+
+</RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>

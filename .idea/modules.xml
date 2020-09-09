@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cir_library/Cir_library.iml" filepath="$PROJECT_DIR$/Cir_library/Cir_library.iml" group="Orsac_V_6.0/Cir_library" />
+      <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" group="Orsac_V_6.0/MPChartLib" />
+      <module fileurl="file://$PROJECT_DIR$/Orsac_V_6.0.iml" filepath="$PROJECT_DIR$/Orsac_V_6.0.iml" group="Orsac_V_6.0" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Orsac_V_6.0/app" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" group="Orsac_V_6.0/library" />
+    </modules>
+  </component>
+</project>

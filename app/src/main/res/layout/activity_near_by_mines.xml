@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@null"
+    tools:context="orsac.rosmerta.orsac_vehicle.android.Orsac.NearByMines">
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_orsac" />
+<LinearLayout
+    android:id="@+id/line_sear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="6dp"
+        android:orientation="horizontal">
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:padding="20dp"
+            android:text="From"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:background="@drawable/ic_miner"
+            android:id="@+id/myTextView" />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinner_source"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="2dp"
+
+            app:hintText="Select Mines"
+            android:background="@drawable/rect_light"
+            android:paddingLeft="8dp"
+            android:spinnerMode="dialog"
+            android:visibility="visible"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="6dp"
+        android:orientation="horizontal">
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:padding="20dp"
+            android:text="From"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:background="@drawable/radius_of_circle"
+             />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinner_radious"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="2dp"
+
+            app:hintText="Select Radius"
+            android:background="@drawable/rect_light"
+            android:paddingLeft="8dp"
+            android:spinnerMode="dialog"
+            android:visibility="visible"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/btn_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="sendFeedback"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Search"
+        android:layout_marginBottom="10dp"/>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/lineaar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:background="#60000000">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#800000">
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.wap.googlegps.MapsActivity" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:paddingLeft="3dp"
+
+            android:src="@drawable/globalsearch" />
+        <FrameLayout
+            android:id="@+id/frame_floating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:visibility="visible"
+            android:layout_marginLeft="1dp">
+
+
+            <ImageView
+                android:id="@+id/home_page"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+
+                android:src="@drawable/rect2" />
+
+
+            <ImageView
+                android:id="@+id/img_search"
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+
+                android:paddingLeft="3dp"
+
+                android:src="@drawable/globalsearch" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_floating_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:layout_marginLeft="1dp">
+
+
+            <ImageView
+                android:id="@+id/home_page_count"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+
+                android:src="@drawable/rect2" />
+
+
+            <TextView
+                android:id="@+id/search_text"
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text=""
+                android:paddingLeft="3dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/red_light"
+                android:textSize="12sp"
+                android:src="@drawable/globalsearch" />
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

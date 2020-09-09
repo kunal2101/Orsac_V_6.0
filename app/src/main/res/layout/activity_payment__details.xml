@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            card_view:cardElevation="8dp"
+            app:cardCornerRadius="5dp"
+            android:background="#ffffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_comname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+                    android:shadowColor="@color/white"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:gravity="center"
+                    android:text="COMAPNY NAME"
+                    android:textColor="@color/gray"
+                    android:textSize="15dp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            app:cardCornerRadius="5dp"
+            card_view:cardElevation="9dp"
+            android:layout_marginRight="20dp"
+
+            android:background="@drawable/round_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/round_border">
+
+                    <customfonts.MyEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Customer Name"
+                        android:padding="15dp"
+                        android:textSize="13dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="18dp"
+                    android:background="@drawable/round_border">
+
+                    <customfonts.MyEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Mobile No"
+                        android:padding="15dp"
+                        android:inputType="phone"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/round_border">
+
+                    <customfonts.MyEditText
+                        android:id="@+id/myEdit_no_devcie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="No. of Devices (Quantity in Numbers) "
+                        android:padding="15dp"
+                        android:inputType="number"
+
+
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+
+
+
+                    <CheckBox
+                        android:id="@+id/chk_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" I agree with Price of One Device (MRP in Rs. -----)"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="12dp"
+                        android:layout_marginTop="10dp"/>
+
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price to Pay is Rs. ---"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    android:textColor="#000000"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/txt_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next Step"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="30dp"
+                    android:textColor="#ffffff"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                   android:background="@drawable/rounded_button"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+                <customfonts.MyTextView
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

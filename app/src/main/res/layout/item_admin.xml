@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false"
+    card_view:cardCornerRadius="5dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="2dp"
+            android:background="#ACACAC" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00C0EF"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00C0EF"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tot_com"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="0"
+                    android:letterSpacing="0.0500"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Empanelled Companies"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00A65A"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/veh_trac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Installed"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F39C12"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tot_dev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.0500"
+
+                    android:shadowColor="@color/black"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Devices"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="60dp"
+                android:background="#ACACAC" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#DD4B39"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tot_trip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@color/black"
+                    android:letterSpacing="0.0500"
+                    android:shadowDy="-4"
+                    android:shadowRadius="4"
+                    android:text="2,080"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Trip Count"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <!-- <View
+                 android:layout_width="1dp"
+                 android:layout_height="60dp"
+                 android:background="#ACACAC"/>
+     -->
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ACACAC" />
+    </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:padding="2dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rela_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/item_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="icon"
+                    android:scaleType="fitXY"
+
+                    android:src="@drawable/rose_fiver" />
+
+                <!--  <TextView
+
+                      android:id="@+id/title_use"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="20dp"
+                      android:gravity="center"
+                      android:text="Availabel Devices"
+                      android:textColor="@color/white"
+                      android:textSize="16dp"
+                      android:textStyle="bold" />-->
+
+                <!--   <TextView
+
+                       android:id="@+id/title_avai"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+               android:layout_below="@+id/title_use"
+                       android:gravity="center"
+                       android:text="Installed Device"
+                       android:textColor="@color/white"
+                       android:textSize="16dp"
+                       android:textStyle="bold" />-->
+
+                <RelativeLayout
+                    android:id="@+id/rela_shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/shadow_gradient">
+
+                    <TextView
+                        android:id="@+id/item_title"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+
+                        android:paddingTop="15dp"
+                        android:text="Company Name "
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/bg_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="bottom"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_below="@+id/item_title"
+                        android:text="BG Status -  ------- "
+                        android:background="@drawable/border"
+                        android:textColor="@color/fb_blue"
+
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/num_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/discount_bg"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:text="01"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout"
+            android:background="@drawable/border"
+
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tot_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Device :"
+                    android:textColor="@color/primary"
+                    android:textSize="13sp"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:id="@+id/Total_Devices"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="2590"
+                    android:background="@drawable/border"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/primary"/>
+                <LinearLayout
+                    android:id="@+id/trip_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/trip_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TripCount :"
+                        android:textColor="@color/primary"
+                        android:textSize="13sp"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:id="@+id/trip_value"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:text="2590"
+                        android:textColor="@color/text_black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_red"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_avai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.0500"
+                        android:shadowColor="@color/black"
+                        android:shadowDy="-4"
+                        android:shadowRadius="4"
+                        android:text="20000"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+
+                        android:textStyle="italic|bold" />
+
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VTU Fitted"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:background="#ACACAC" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:background="@drawable/back_yello"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_use"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.0250"
+
+                        android:shadowColor="@color/black"
+                        android:shadowDy="-4"
+                        android:shadowRadius="4"
+                        android:text="55551/11111"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="italic|bold" />
+
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active/Inactive"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:background="#ACACAC" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_blue"
+                    android:gravity="center"
+
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bg_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.0200"
+
+                        android:shadowColor="@color/black"
+                        android:shadowDy="-4"
+                        android:shadowRadius="4"
+                        android:text="----"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="italic|bold" />
+
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Device Allow"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Total_Devices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border"
+                        android:text="2590"
+                        android:textColor="@color/text_black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ACACAC" />
+
+            <!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/title_avai"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="256"
+                                    android:textColor="@color/dot_dark_screen1"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <customfonts.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Available Device"
+                                    android:textColor="@color/primary"
+
+                                    android:textSize="14dp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="60dp"
+                                android:background="#ACACAC" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/trip_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2,080"
+                                    android:textColor="@color/dot_dark_screen1"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <customfonts.MyTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TripCount"
+                                    android:textColor="@color/primary"
+
+                                    android:textSize="14dp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="60dp"
+                                android:background="#ACACAC" />
+
+
+                            &lt;!&ndash;
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:layout_marginTop="10dp">
+                                            <customfonts.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="144"
+                                                android:textColor="@color/title_color"
+                                                android:textStyle="bold"
+                                                android:textSize="18dp" />
+                                            <customfonts.MyTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="Following"
+                                                android:textSize="14dp"/>
+
+                                        </LinearLayout>
+                            &ndash;&gt;
+
+
+                        </LinearLayout>
+            -->
+
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/gray"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_marginBottom="5dp"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/avi_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available Devices:"
+                            android:textColor="@color/primary"
+                            android:textSize="13sp"
+                            android:layout_marginRight="5dp"/>
+
+                        <TextView
+                            android:id="@+id/title_avai"
+                            android:layout_width="wrap_content"
+                            android:textStyle="bold"
+                            android:layout_height="wrap_content"
+                            android:text="2590"
+                            android:textColor="@color/text_black"
+                            android:textSize="15sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/primary"/>
+                        <LinearLayout
+                            android:id="@+id/d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:id="@+id/lbl3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Installed Devices:"
+                                android:textColor="@color/primary"
+                                android:textSize="13sp"
+                                android:layout_marginRight="5dp"/>
+
+                            <TextView
+                                android:id="@+id/title_use"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="2590"
+                                android:textColor="@color/text_black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+            -->
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/trip_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2,080"
+            android:visibility="gone"
+            android:textColor="@color/dot_dark_screen1"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

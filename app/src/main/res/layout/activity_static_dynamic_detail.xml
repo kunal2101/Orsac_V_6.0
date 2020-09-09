@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaticDynamicDetail">
+
+    <include layout="@layout/toolbar_orsac"
+        android:id="@+id/toolBar"
+        />
+
+    <AutoCompleteTextView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/roundshape"
+        android:drawableLeft="@drawable/ic_international_search_symbol"
+        android:ellipsize="end"
+        android:visibility="visible"
+        android:hint="   Search ETP No..."
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/toolBar"
+        android:paddingRight="20dp"
+        android:maxLines="2"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17dp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rela_titl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#183144">
+
+        <LinearLayout
+            android:id="@+id/content_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/locations"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:background="#183144"
+                android:gravity="center_horizontal|top"
+                android:paddingBottom="10dip"
+                android:paddingLeft="2dip"
+                android:paddingRight="2dip"
+                android:paddingTop="10dip"
+                android:text="ETP No"
+                android:textColor="@color/white"
+                android:textSize="12dip"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dip"
+                android:layout_weight=".5"
+                android:background="#183144"
+                android:gravity="center_horizontal|top"
+                android:paddingBottom="10dip"
+                android:paddingLeft="2dip"
+                android:paddingRight="2dip"
+                android:paddingTop="10dip"
+                android:text="VehcleNo"
+                android:textColor="@color/white"
+                android:textSize="12dip"
+                android:textStyle="bold" />
+
+            <!--<TextView
+                android:id="@+id/descr"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dip"
+                android:layout_weight=".8"
+                android:background="#183144"
+                android:gravity="center_horizontal|top"
+                android:paddingBottom="10dip"
+                android:paddingLeft="2dip"
+                android:paddingRight="2dip"
+                android:paddingTop="10dip"
+                android:text="Status"
+                android:visibility="visible"
+                android:textColor="@color/white"
+                android:textSize="12dip"
+                android:textStyle="bold" />-->
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_below="@+id/content_lay"
+            android:background="@color/green" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/rela_titl"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/noPosts"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:layout_below="@+id/rela_titl" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Oops !! You don't have any detail at this moment."
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"
+            android:layout_gravity="center" />
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

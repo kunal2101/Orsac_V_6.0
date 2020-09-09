@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/toolbar_orsac" />
+    </RelativeLayout>
+    <android.support.v7.widget.CardView
+        android:id="@+id/noPosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="50dp"
+        android:visibility="gone"
+        android:layout_marginTop="60dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Oops !! You don't have any detail at this moment."
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:textColor="@color/primary_text"
+
+            android:textSize="16sp"
+            android:layout_gravity="center" />
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/moreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dip"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@color/fb_blue">
+
+        <ProgressBar
+            android:id="@+id/more_progress"
+            android:layout_width="25dip"
+            android:layout_height="25dip" />
+        <TextView
+            android:id="@+id/progressmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="Loading data..."
+            android:textColor="@color/white"
+            android:textSize="14dip"
+            android:layout_marginLeft="15dip"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_list"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+
+                    <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                       android:id="@+id/etp_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_weight="2.0"
+                        android:gravity="center_horizontal"
+                        android:text="ETP No - L101903621"
+                        android:textColor="#fff"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+
+                        />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="IMEINO :-"
+                        android:textColor="#fff"
+                        android:textSize="14dp" />
+
+
+                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                        android:id="@+id/imeino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="75575477474474674777"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:src="@drawable/comments" />
+
+                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                        android:id="@+id/veh_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:text="Vehicle No - OD02P4444"
+                        android:textColor="#fff"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                    android:id="@+id/textView_Lato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/roun_rect_white"
+                    android:text="Family Track"
+                    android:textColor="@color/gray"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                    android:id="@+id/title_veh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/roun_rect_gray"
+                    android:text="ETP History"
+                    android:textColor="@color/colorBackroundWhite"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/frameLayout"
+
+                android:orientation="vertical">
+
+
+
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardElevation="4dp"
+
+                    >
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/line"/>
+
+                </android.support.v7.widget.CardView>
+
+
+
+
+
+            </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

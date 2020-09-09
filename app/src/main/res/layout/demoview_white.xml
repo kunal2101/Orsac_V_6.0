@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/layout_one"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="3dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/company"/>
+
+
+            <TextView
+                android:id="@+id/text_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:id="@+id/company1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OverSpeed"
+                android:background="@color/primary_dark"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="10dip"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_two"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="3dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/companyred"/>
+
+
+            <TextView
+                android:id="@+id/text_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/red_light"/>
+
+            <TextView
+                android:id="@+id/company2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OverSpeed"
+                android:background="@color/primary_red"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="10dip"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/layout_three"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="-60dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="3dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/companyblue"/>
+
+
+            <TextView
+                android:id="@+id/text_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/fb_blue"/>
+
+            <TextView
+                android:id="@+id/company3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OverSpeed"
+                android:background="@color/fb_blue"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="10dip"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_four"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="-60dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="3dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/comapnypink"/>
+
+
+            <TextView
+                android:id="@+id/text_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/dot_light_screen1"/>
+
+            <TextView
+                android:id="@+id/company4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OverSpeed"
+                android:background="@color/dot_light_screen1"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="10dip"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

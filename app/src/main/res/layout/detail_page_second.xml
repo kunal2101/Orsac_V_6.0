@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar_orsac" />
+
+            <customfonts.MyTextView
+                android:id="@+id/etp_title"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/white_smoke"
+                android:gravity="center"
+                android:text="ETP No - I121604622/86 "
+                android:textColor="@color/fb_blue"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F3F4F6"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_bill"
+                    android:gravity="center" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Circle"
+                    android:textColor="@color/text" />
+
+                <TextView
+                 android:id="@+id/circles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:text="ROURKELA"
+                    android:textColor="@color/textred"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_star_2" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Pass Valid :"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/valid_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="2017-01-10 20:02:19"
+                    android:textColor="#6d6d6d" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_commerce" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Vehicle No :"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/vehi_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="OD05E6343"
+                    android:textColor="#6d6d6d" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_bills" />
+
+                <customfonts.MyTextView
+                    android:id="@+id/myTextView_Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="IGNITION"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/ign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="INVALID"
+                    android:textColor="#6d6d6d" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_paid" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="GPS"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/gps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="VALID"
+                    android:textColor="#6d6d6d"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_commerce" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Code :"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/code_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="123013207841"
+                    android:textColor="#6d6d6d" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/ic_star_2" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Strat Time :"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/start_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:gravity="right"
+                    android:text="2017-01-07 20:02:19"
+                    android:textColor="#6d6d6d" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/address_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:clickable="true"
+                android:visibility="gone"
+                card_view:cardElevation="2dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/addLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="ADDRESS DETAIL"
+                        android:textColor="@color/textred"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/sou_title"
+                        android:layout_below="@+id/addLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:padding="5dp"
+                        android:text="Source :"
+                        android:textColor="@color/text"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/addLabel"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/sou_title"
+                        android:singleLine="true"
+                       android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15dp"
+                        android:text="Utkal Metalics Ltd.,Utkal Metalics Ltd.(Kalunga)"/>
+                <View
+                    android:id="@+id/view_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/sou_title"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray"/>
+                    <TextView
+                        android:id="@+id/des_tit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destination :"
+                        android:textSize="18dp"
+                        android:textColor="@color/text"
+                        android:padding="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_below="@+id/view_one"
+                        android:textStyle="bold"/>
+ <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_toRightOf="@+id/des_tit"
+     android:text="K A I INTERNATIONAL PRIVATE LIMITED"
+     android:layout_below="@+id/view_one"
+     android:padding="5dp"
+     android:layout_marginTop="5dp"
+     android:singleLine="true"
+     android:layout_marginBottom="5dp"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/time_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:visibility="visible"
+                card_view:cardElevation="2dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/addLabel_se"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="ADDRESS DETAIL"
+                        android:textColor="@color/textred"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/source_ti"
+                        android:layout_below="@+id/addLabel_se"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:padding="5dp"
+                        android:text="Source :"
+
+                        android:textColor="@color/text"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                    <customfonts.MyTextView
+                        android:id="@+id/source"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/addLabel_se"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/source_ti"
+                        android:singleLine="true"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15dp"
+                        android:text="Utkal Metalics Ltd.,Utkal Metalics Ltd.(Kalunga)"/>
+                    <View
+                        android:id="@+id/view_one_se"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/source"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/gray"/>
+                    <TextView
+                        android:id="@+id/des_tit_se"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destination :"
+                        android:textSize="18dp"
+                        android:textColor="@color/text"
+                        android:padding="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_below="@+id/view_one_se"
+                        android:textStyle="bold"/>
+                    <customfonts.MyTextView
+                        android:id="@+id/destination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/des_tit_se"
+                        android:text="K A I INTERNATIONAL PRIVATE LIMITED"
+                        android:layout_below="@+id/view_one_se"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:singleLine="true"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="5dp"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/policy_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:visibility="visible"
+                card_view:cardElevation="2dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:id="@+id/policyLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false">
+
+                    <TextView
+                        android:id="@+id/policyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="TRIP DETAIL"
+                        android:textColor="@color/fb_blue"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/exchangeIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignLeft="@+id/policyLabel"
+                        android:layout_below="@+id/policyLabel"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/miner"/>
+                    <!--android:src="@drawable/service_true" -->
+
+                    <TextView
+                        android:id="@+id/min_name"
+                        style="@style/RobotoTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/exchangeIcon"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/exchangeIcon"
+                        android:text="@string/mine"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/returnIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignLeft="@+id/exchangeIcon"
+                        android:layout_below="@+id/exchangeIcon"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/quanity"/>
+                    <!--android:src="@drawable/service_false" -->
+
+                    <TextView
+                        android:id="@+id/quitity"
+                        style="@style/RobotoTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/returnIcon"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/returnIcon"
+                        android:layout_toRightOf="@+id/returnIcon"
+                        android:text="@string/quantity"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp" />
+
+
+                    <ImageView
+                        android:id="@+id/creditIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignLeft="@+id/exchangeIcon"
+                        android:layout_below="@+id/returnIcon"
+                        android:src="@drawable/speedometer"
+                        android:layout_marginTop="5dp" />
+                    <!-- -->
+
+                    <TextView
+                        android:id="@+id/credit"
+                        style="@style/RobotoTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/creditIcon"
+                        android:layout_alignLeft="@+id/quitity"
+                        android:layout_alignStart="@+id/quitity"
+                        android:text="@string/speed"
+                        android:visibility="visible"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/dirIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignLeft="@+id/exchangeIcon"
+                        android:layout_below="@+id/creditIcon"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/compass"
+                        android:layout_marginTop="5dp" />
+                    <!-- -->
+
+                    <TextView
+                        android:id="@+id/dir_text"
+                        style="@style/RobotoTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/dirIcon"
+                        android:layout_alignLeft="@+id/quitity"
+                        android:layout_alignStart="@+id/quitity"
+                        android:text="@string/direc"
+                        android:visibility="visible"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:id="@+id/policyDivider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/dir_text"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/separator_color"></View>
+
+                    <TextView
+                        android:id="@+id/policyText"
+                        style="@style/RobotoTextViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/exchangeIcon"
+                        android:layout_below="@+id/policyDivider"
+                        android:layout_marginBottom="10dp"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/gps_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:clickable="true"
+
+                android:visibility="visible"
+                card_view:cardElevation="2dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/addLabel_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="8dp"
+                            android:text="TIMING DETAIL"
+                            android:textColor="@color/primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/sou_title_time"
+                            android:layout_below="@+id/addLabel_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:padding="5dp"
+                            android:text="Packet Date :"
+                            android:textColor="@color/text"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/pick_date"
+                            android:layout_width="wrap_content"
+                            android:layout_below="@+id/addLabel_time"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/sou_title_time"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:layout_marginTop="5dp"
+                            android:textSize="15dp"
+                            android:text="2017-01-01"/>
+                        <View
+                            android:id="@+id/view_one_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/sou_title_time"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/gray"/>
+                        <TextView
+                            android:id="@+id/des_tit_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Packet Time :"
+                            android:textSize="18dp"
+                            android:textColor="@color/text"
+                            android:padding="5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_below="@+id/view_one_time"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/pick_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/des_tit_time"
+                            android:text="07:22:01"
+                            android:layout_below="@+id/view_one_time"
+                            android:padding="5dp"
+                            android:textSize="15sp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:layout_marginBottom="5dp"/>
+                    </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please call"
+                    android:textColor="@color/text"
+                    android:textSize="13dp" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 011 2382 925"
+                    android:textColor="#59c861"
+                    android:textSize="13dp" />
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" to get your new PIN"
+                    android:textColor="@color/text"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+    <TextView
+        android:id="@+id/rose_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Design &amp; Developed By Rosmerta Technologies Ltd."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

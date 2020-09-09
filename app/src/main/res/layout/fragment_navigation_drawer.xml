@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+   >
+
+    <RelativeLayout
+        android:id="@+id/profileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="1dp"
+        android:background="@color/dot_dark_screen1"
+        android:clickable="false">
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_bd_navi" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/profilePic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="User Name"
+            android:visibility="invisible"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/sideMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="#F0F0F0"
+        android:dividerHeight="1dp" />
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Detail"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/searchEditText"
+                android:hint="Name"
+                android:drawableLeft="@drawable/ic_action_person"
+                android:layout_marginTop="15dp"
+                android:inputType="textCapWords"
+                android:id="@+id/feedbackName" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/searchEditText"
+                android:hint="Email"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
+                android:id="@+id/feedbackEmail" />
+
+            <EditText
+                android:id="@+id/feedbackNum"
+                style="@style/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Phone Number"
+                android:drawableLeft="@drawable/ic_action_call_dark"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"
+                android:maxLength="10" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/btn_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:onClick="sendFeedback"
+                android:text="Buy Now" />
+        </LinearLayout>
+
+</RelativeLayout>

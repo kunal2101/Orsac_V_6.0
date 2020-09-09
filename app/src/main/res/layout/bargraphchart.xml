@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="app.num.bargraphmp.MainActivity">
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_orsac" />
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Design &amp; Developed By Rosmerta Technologies Ltd."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dealer Customer Details"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_below="@id/toolBar"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:textColor="@color/fb_blue"/>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+       <!-- <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" Dealer Customer Details/>-->
+
+         <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+             android:layout_marginTop="100dp"
+             />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/com_name"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:textColor="@color/primary"
+        android:layout_below="@+id/relativelayout"/>
+</RelativeLayout>

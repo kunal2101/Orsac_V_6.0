@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    	>
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_orsac" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolBar">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <EditText
+                android:id="@+id/feedbackEdittext"
+                style="@style/searchEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="Enter Your Feedback..."
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:ems="10"
+                android:drawableLeft="@drawable/ic_action_feedback_dark"
+                android:maxLines="10"
+                android:minLines="2"
+                android:maxLength="50"
+                android:scrollbars="vertical" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/searchEditText"
+                android:hint="Name"
+                android:drawableLeft="@drawable/ic_action_person"
+                android:layout_marginTop="15dp"
+                android:inputType="textCapWords"
+                android:id="@+id/feedbackName" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/searchEditText"
+                android:hint="Email"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
+                android:id="@+id/feedbackEmail" />
+
+            <EditText
+                android:id="@+id/feedbackNum"
+                style="@style/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Phone Number"
+                android:drawableLeft="@drawable/ic_action_call_dark"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"
+                android:maxLength="10" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/btn_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:onClick="sendFeedback"
+                android:text="Send Feedback" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/rose_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Powered By ORSAC"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/content_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/green">
+
+
+        <TextView
+            android:id="@+id/etp"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:text="ETP No"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:textStyle="bold"
+            android:textColor="@color/text_black"
+            android:gravity="center_horizontal|top"
+            android:layout_marginLeft="1dip"
+            android:textSize="12dip"/>
+        <TextView
+            android:id="@+id/circle"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:text="	Circle"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:paddingLeft="2dip"
+            android:textColor="@color/text_black"
+
+            android:paddingRight="2dip"
+            android:gravity="center_horizontal|top"
+            android:layout_marginLeft="1dip"
+            android:textSize="12dip"/>
+        <TextView
+            android:id="@+id/mores"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:text="Detail "
+            android:textStyle="bold"
+            android:textColor="@color/fb_blue"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:gravity="center_horizontal|top"
+            android:layout_marginLeft="1dip"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/green"
+        android:layout_below="@+id/content_lay"/>
+</RelativeLayout>

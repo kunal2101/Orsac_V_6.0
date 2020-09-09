@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomTextView">
+        <attr name="font_name">
+            <enum value="1" name="regular"/>
+            <enum value="2" name="bold"/>
+            <enum value="3" name="semibold"/>
+            <enum value="4" name="heavy"/>
+            <enum value="5" name="angelina"/>
+            <enum value="6" name="robotoregular"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ExpandableTextView">
+        <attr name="trimLength" format="integer"/>
+    </declare-styleable>
+     <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+    <declare-styleable name="AvatarImageBehavior">
+        <attr name="finalYPosition" format="dimension" />
+        <attr name="startXPosition" format="dimension" />
+        <attr name="startToolbarPosition" format="dimension" />
+        <attr name="startHeight" format="dimension" />
+        <attr name="finalHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularImageViewStyle">
+        <attr name="circularImageViewDefault" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CircularImageView">
+        <!-- Whether or not to draw a circular border around the image. -->
+        <attr name="civ_border" format="boolean" />
+        <!-- The color of the border draw around the image. (if enabled) -->
+        <attr name="civ_borderColor" format="color" />
+        <!-- Makes the border this pixels wide. (if enabled) -->
+        <attr name="civ_borderWidth" format="dimension" />
+        <!-- Whether or not to draw a selector on this view upon touch events. -->
+        <attr name="civ_selector" format="boolean" />
+        <!-- The color of the selector draw on top of the image upon touch events. (if enabled) -->
+        <attr name="civ_selectorColor" format="color" />
+        <!-- The color of the selector stroke drawn around the image upon touch events. Be sure to provide some opacity. (if enabled) -->
+        <attr name="civ_selectorStrokeColor" format="color" />
+        <!-- The selector stroke drawn around the image upon touch events this pixels wide. (if enabled) -->
+        <attr name="civ_selectorStrokeWidth" format="dimension" />
+        <!-- Whether or not to draw a shadow around your circular image. -->
+        <attr name="civ_shadow" format="boolean" />
+        <!-- The radius for the shadow to extend to. (if enabled) -->
+        <attr name="civ_shadowRadius" format="float" />
+        <!-- Horizontal shadow offset. (if enabled) -->
+        <attr name="civ_shadowDx" format="float" />
+        <!-- Vertical shadow offset. (if enabled) -->
+        <attr name="civ_shadowDy" format="float" />
+        <!-- The color of the shadow drawn around your circular image. (if enabled) -->
+        <attr name="civ_shadowColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr name="umanoPanelHeight" format="dimension" />
+        <attr name="umanoShadowHeight" format="dimension" />
+        <attr name="umanoParallaxOffset" format="dimension" />
+        <attr name="umanoFadeColor" format="color" />
+        <attr name="umanoFlingVelocity" format="integer" />
+        <attr name="umanoDragView" format="reference" />
+        <attr name="umanoScrollableView" format="reference" />
+        <attr name="umanoOverlay" format="boolean"/>
+        <attr name="umanoClipPanel" format="boolean"/>
+        <attr name="umanoAnchorPoint" format="float" />
+        <attr name="umanoInitialState" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+        <attr name="umanoScrollInterpolator" format="reference" />
+    </declare-styleable>
+
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/rela_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/header_bg"
+    >
+
+    <ImageView
+        android:id="@+id/splash_Rotate"
+        android:layout_width="-1dp"
+        android:layout_height="-1dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="-200dp"
+        android:visibility="gone"
+        android:layout_marginRight="-200dp"
+        android:scaleType="center"
+
+        android:src="@drawable/orissa_back" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/orisha_steel_mine"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/orisha_steel_mine"
+        android:layout_marginTop="5dp"
+
+        android:visibility="gone" />
+    <TextView
+        android:text="Powered By ORSAC."
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:id="@+id/TextView03"
+        android:padding="5dip"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+  android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_one"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/item_icon"
+
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/rose_new">
+
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/profiletransparent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/item_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="1dp"
+                        android:gravity="left"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:text="Rosemerta Autotech"
+                        android:textColor="#fff"
+                        android:textSize="20dp" />
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_red"
+                        android:gravity="center"
+                        android:orientation="vertical"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/title_avai"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.0500"
+                            android:shadowColor="@color/black"
+                            android:shadowDy="-4"
+                            android:shadowRadius="4"
+                            android:text="7777"
+                            android:textColor="@color/white"
+                            android:textSize="25dp"
+
+                            android:textStyle="italic|bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Available Device"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_yello"
+                        android:gravity="center"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/title_use"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.0500"
+                            android:shadowColor="@color/black"
+                            android:shadowDy="-4"
+                            android:shadowRadius="4"
+                            android:text="7777"
+                            android:textColor="@color/white"
+                            android:textSize="25dp"
+
+                            android:textStyle="italic|bold" />
+
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Installed Device"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+android:singleLine="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_blue"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Total_Devices"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.0200"
+
+                            android:shadowColor="@color/black"
+                            android:shadowDy="-4"
+                            android:shadowRadius="4"
+                            android:text="2,080"
+                            android:textColor="@color/white"
+                            android:textSize="25dp"
+                            android:textStyle="italic|bold" />
+
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Device"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:src="@drawable/devices" />
+
+            <customfonts.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="TRIP COUNT :"
+                android:textSize="20sp"
+                android:textColor="@color/colorHead"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trip_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:letterSpacing="0.0500"
+                android:shadowColor="@color/black"
+                android:shadowDy="-4"
+
+                android:shadowRadius="4"
+                android:text="7777"
+                android:textColor="@color/primary_dark"
+                android:textSize="25dp"
+
+                android:textStyle="italic|bold" />
+            <TextView
+                android:id="@+id/num_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/discount_bg"
+                android:gravity="center_horizontal"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:text="01"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#c6cbcf" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

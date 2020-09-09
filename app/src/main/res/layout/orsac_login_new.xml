@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_back_imag"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#555c5b"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/layer2"
+                    android:padding="16dp"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/mob_it"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#626562"
+                android:padding="16dp"
+                android:hint="User Name"
+                android:textColorHint="#fff"
+                android:textSize="14dp"
+                android:inputType="number"
+                android:textColor="#fff"
+                android:singleLine="true"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#555c5b"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/layer4"
+                    android:padding="16dp"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/mob"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#626562"
+                android:padding="16dp"
+                android:hint="Password"
+                android:textColorHint="#fff"
+                android:textSize="14dp"
+                android:inputType="number"
+                android:textColor="#fff"
+                android:singleLine="true"
+
+                />
+
+        </LinearLayout>
+<!--
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/input_password"
+            android:theme="@style/MyRadioButton"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:buttonTint="@color/primary"
+            android:text="Show Password"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" />
+-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:id="@+id/cont"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#626562"
+                    android:padding="16dp"
+                    android:text="LOGIN"
+                    android:textColor="#fff"
+                    android:textSize="14dp"
+                    android:gravity="center"
+                    android:layout_marginRight="8dp"
+                    />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#d57177"
+
+                >
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/layer6"
+                    android:padding="16dp"
+                    />
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/forget_pass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Forget Password"
+        android:textColor="@color/dot_dark_screen1"
+        android:textSize="20dip"
+       android:textStyle="bold"
+
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="50dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_orsac"
+
+            />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+
+
+
+

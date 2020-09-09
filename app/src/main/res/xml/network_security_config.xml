@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+    <trust-anchors>
+        <certificates src="system" />
+        <certificates src="user" />
+
+    </trust-anchors>
+    </base-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">gpstrack.nhmodisha.in/</domain>
+        <domain includeSubdomains="true">209.190.15.106:8020</domain>
+        <domain includeSubdomains="true">https://vts.odishaminerals.gov.in</domain>
+        <domain includeSubdomains="true">http://vts.orissaminerals.gov.in/</domain>
+
+       <!-- <domain includeSubdomains="true">http://gpstrack.nhmodisha.in/</domain>
+        <domain includeSubdomains="true">http://vts.orissaminerals.gov.in</domain>
+        <domain includeSubdomains="true">https://vtscloud.co.in/</domain>-->
+<!--
+        <domain includeSubdomains="true">vtscloud.co.in</domain>
+-->
+    </domain-config>
+    <!--<domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">vts.orissaminerals.gov.in</domain>
+
+    </domain-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+
+
+                <domain includeSubdomains="true">vtscloud.co.in</domain>
+    </domain-config>-->
+
+</network-security-config>

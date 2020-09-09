@@ -1,0 +1,59 @@
+<resources xmlns:text-align="http://schemas.android.com/tools">
+    <string name="app_name">OMVTS ORSAC</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="mines">Select Mines</string>
+
+    <string name="toast_no_internet">Internet not available</string>
+    <string name="dialog_no_internet">No Internet</string>
+    <string name="dialog_no_inter_message">You have not active internet connection.</string>
+    <string name="dialog_enable_3g">Enable 3G</string>
+    <string name="dialog_enable_wifi">Enable WIFI</string>
+    <string name="dialog_exit">Exit</string>
+    <string name="spinner_title">Select Company </string>
+
+    <string name="next">NEXT</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="next_circle">NEXT</string>
+    <color name="text">#3b3b3b</color>
+    <color name="textsub">#aaaaaa</color>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="message">Developed &amp; Designed By Rosmerta Technologies Ltd.</string>
+    <string name="action_settings">Settings</string>
+    <string name="pow_orsac"><u>Powered By ORSAC</u></string>
+    <string name="call">Term &amp; Condition </string>
+    <string name="ter_text">720 \n Call </string>
+
+    <string name="term">This App is published by or on behalf of  Orsac.  \n  By downloading or otherwise accessing the App you agree to be bound by the following terms and conditions \n \n(*) Allow to use your Location , Phone Status , Camera , Microphone etc
+                           \n \n Copyright  2019 Orsac, All rights reserved. \n \n \n </string>
+    <!-- <string name="BlscompanyProfile"><html> <head>Heading</head> <body style=text-align:justifycolor:white;>
+	BLS International Services Ltd. is a specialist provider for Outsourcing of Visa, Passport and Attestation Services to the Client Governments across the world. BLS serves the Diplomatic Missions by managing
+	all administrative and non-judgmental tasks related to the entire life cycle of a visa application process, enabling missions to focus entirely on the key aspects of assessment of the visa application and conduct
+	interviews, where required; here too, BLS assists in scheduling interviews.&lt;br/>&lt;br/> BLS has operations in more than 22 countries and is providing services through 101 offices worldwide. More details of our global
+	footprint can be found here. It handles close to 3 Million applications annually.&lt;br/>&lt;br/> BLS is also an authorized Service Provider for attestation of documents by the Ministry of External Affairs, India.
+	It also serves the Embassy of the State of Kuwait and High Commission of Malaysia and several others in the field of Visa/Attestation of Documents/Apostille in India.&lt;br/>&lt;br/> BLS supports the consular framework with
+	streamlined processes and work flows. Towards this end, it has the necessary skilled human resources and technical capabilities (including complete biometric solutions) and financial capabilities to deliver efficient and
+	optimal outsourcing solutions. Moreover, to ensure highly efficient project management, it assigns dedicated teams of skilled and experienced persons with relevant project management experience for each project.
+	</body> </html></string>
+-->
+    <string name="mine"><p> <b>MINERAL NAME :</b><p> </p> ------- </p> </string>
+    <string name="quantity"><p> <b>QUANTITY :</b><p> </p> ----- ton </p> </string>
+    <string name="speed"><p> <b>SPEED :</b><p> </p> --- Km</p> </string>
+    <string name="direc"><p> <b>DIRECTION :</b><p> </p> ----- </p> </string>
+
+    <string name="tot_insta"><p><b>Installed Device  \n</b></p>  </string>
+    <string-array name="countries_array">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+    </string-array>
+    <string name="com_name">A - Trimble \n B - Trimble \n C - Trimble \n D - Atlanta \n E - Rosmerta \n F - Arya Omnitalk \n E - Fastrackerz</string>
+    <string name="company_name">A - Trimble Mobility solution pvt Ltd \nB - Rosmerta Autotech pvt Ltd \nC - Fastrackerz \nD - Atlanta \nE - Arya Omnitalk wireless pvt Ltd</string>
+</resources>
+

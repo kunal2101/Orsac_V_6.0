@@ -1,0 +1,149 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+
+    </style>
+    <style name="MyDialog" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/FadeDialogAnimation</item>
+    </style>
+    <style name="searchEditText" parent="android:Widget.Holo.Light.EditText">
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="btn_primary" parent="@style/btn_theme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/primary_button_bg</item>
+    </style>
+    <style name="btn_theme">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="FadeDialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="MyTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="Toolbar_Theme">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@drawable/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@drawable/slide_out_down</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="disabled_btn" parent="@android:style/Widget.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_disabled_button</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+
+
+
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/divider</item>
+        <item name="colorControlActivated">#ef487e</item>
+    </style>
+
+
+    <style name="AppDialog" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bill_back_color</item>
+        <item name="colorPrimaryDark">@color/bill_back_color</item>
+        <item name="colorAccent">@color/bill_back_color</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="pdlg_default_animation">
+        <item name="android:windowEnterAnimation">@anim/pdlg_anim_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/pdlg_anim_fade_out</item>
+    </style>
+    <style name="pdlg_no_animation">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="mProgressBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="colorPrimary">@color/bill_back_color</item>
+        <item name="colorPrimaryDark">@color/bill_back_color</item>
+        <item name="colorAccent">@color/bill_back_color</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowMinWidthMajor">98%</item>
+        <item name="android:windowMinWidthMinor">98%</item>
+        <item name="android:windowBackground">@color/bill_back_color</item>
+    </style>
+
+
+    <style name="NewDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

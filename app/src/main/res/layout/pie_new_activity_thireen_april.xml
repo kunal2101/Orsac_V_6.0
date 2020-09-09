@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="app.num.piechart.MainActivity">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/primary_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:visibility="gone"
+            android:text="Color code , Company Name, Installed Devices"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/primary_dark" />
+
+        <!-- start row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:visibility="gone"
+                android:background="#BF1A21" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="Fastrackerz "
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 0000 "
+                android:textColor="#F68159"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end row 1 -->
+
+        <!-- start 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:visibility="gone"
+
+                android:background="#18B086" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="Rosmerta Autotech pvt ltd"
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 0000 "
+                android:textColor="#F68159"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end 2 -->
+
+        <!-- start 3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dip"
+            android:visibility="gone"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:background="#FF9901" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="  - Trimble "
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trimble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 3 "
+                android:textColor="#14a895"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end 3  -->
+
+        <!-- 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:visibility="gone"
+
+                android:background="#008081" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="eTrans"
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/etran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 000 "
+                android:textColor="#F68159"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end 4 -->
+
+        <!-- 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:visibility="gone"
+
+                android:background="#a854d4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="Atlanta System pvt ltd "
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/arya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 0000 "
+                android:textColor="#F68159"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end 5 -->
+
+        <!-- 6-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:visibility="gone"
+
+                android:background="#F68159" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="Arya Omnitalk "
+                android:textColor="#303F9F"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/atlanta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text=" - 00 "
+                android:textColor="#F68159"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!-- end 6 -->
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
+    <RelativeLayout
+        android:id="@+id/home_rela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+
+        >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp">
+
+
+            <ImageView
+                android:id="@+id/home_page"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:src="@drawable/rect2" />
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+
+                android:paddingLeft="3dp"
+
+                android:src="@drawable/ic_right_arrow" />
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fb_blue"
+        android:ellipsize="marquee"
+        android:gravity="center"
+
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Design &amp; Developed By Rosmerta Technologies Ltd."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

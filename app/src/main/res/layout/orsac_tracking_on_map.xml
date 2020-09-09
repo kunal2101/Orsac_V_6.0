@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tracking_on_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nrda.TrackingOnMap"
+   >
+    <include layout="@layout/toolbar_orsac"
+        android:id="@+id/tool_id"/>
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_below="@+id/tool_id"
+        android:layout_above="@+id/footer1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        />
+    <LinearLayout
+        android:id="@+id/footer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:padding="2dp"
+       android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/message"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

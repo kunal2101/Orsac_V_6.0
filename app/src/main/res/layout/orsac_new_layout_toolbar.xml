@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/toolbar"
+android:minHeight="?attr/actionBarSize"
+android:layout_width="match_parent"
+android:background="@color/primary"
+android:theme="@style/ThemeOverlay.AppCompat.Dark"
+android:layout_height="wrap_content"
+android:elevation="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"/>
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Dashboard"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tool_back_icon"
+            />
+
+        <ImageView
+            android:id="@+id/tool_back_icon"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            android:src="@drawable/leftarrowarrows"
+            android:layout_marginRight="10dip"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

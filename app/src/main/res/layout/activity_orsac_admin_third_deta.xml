@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="wolfsoft.com.ordersummary.MainActivity">
+        <include layout="@layout/toolbar_orsac"
+            android:id="@+id/toolBar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_below="@+id/toolBar"
+
+            >
+
+            <FrameLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/bg">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/mapview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_earth_grid_symbol_with_a_placeholder"
+                        android:drawablePadding="5dp"
+                        android:text="Track On Map"
+                        android:layout_marginLeft="95dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_gravity="center"
+                        android:padding="3dp"
+                        android:textStyle="bold"
+                        android:background="@drawable/rect_light"
+                        android:textColor="@color/textwhite"
+                        android:textSize="18dp" />
+                    <View
+                        android:id="@+id/div25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/mapview"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="56dp"
+                        android:background="@color/div"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ordersummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="75dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/order" />
+
+                        <TextView
+                            android:id="@+id/vehic_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Vehical No- OR14R1669"
+                            android:textColor="@color/textwhite"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ordersummary"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+
+                        android:text="Source - O.M.C. Ltd."
+                        android:textColor="@color/textred"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ordernumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ordersummary"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="Code :"
+                            android:textColor="@color/text"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="0.5"
+                            android:gravity="left"
+                            android:text="#093013015636"
+                            android:textColor="@color/textred"
+                            android:textSize="21dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/div1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ordernumber"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div1"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+
+                            android:layout_width="45dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/date" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text=" Start Time -Feb 20, 2017"
+                            android:textColor="@color/textred"
+                            android:textSize="21dp" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/div_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/date"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/dates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div_new"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+
+                            android:layout_width="45dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/date" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="Valid Upto - Feb 20, 2017"
+                            android:textColor="@color/textred"
+                            android:textSize="21dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/div2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/dates"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div2"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:src="@drawable/arrow" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="	Circle"
+                                android:textColor="@color/text"
+                                android:textSize="17dp"
+
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:text="Mineral Name"
+                                android:textColor="@color/text"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:text="Quantity"
+                                android:textColor="@color/text"
+                                android:textSize="17dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="15dp"
+                                android:text="KOIRA"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text=" Iron"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="9.760"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/div3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/address"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/items"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div3"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/furni"
+                                android:drawablePadding="13dp"
+                                android:text="	ETP No"
+                                android:textColor="@color/text"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:drawableLeft="@drawable/box"
+                                android:drawablePadding="13dp"
+                                android:text="Circle"
+                                android:textColor="@color/text"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:drawableLeft="@drawable/furni"
+                                android:drawablePadding="13dp"
+                                android:text="Transporter Name"
+                                android:textColor="@color/text"
+                                android:textSize="17dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight="0.8"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="*L31700427/265"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="* 3800"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="* NA"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/div4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/items"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div4"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="Destination--"
+                            android:textColor="@color/textred"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="0.5"
+                            android:gravity="left"
+                            android:text="Bhusan Power and Steel Ltd.,Bhusan Power and Steel Ltd.,Thelkoloi,BPSL pvt siding by rail via Barsuan rly siding on dump and loa"
+                            android:textColor="@color/textred"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/bottom_black_bgcolor"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_statistics" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pie_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_document" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/half_pie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_photo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_icon" />
+
+            </LinearLayout>
+
+
+            <!--
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_photo" />
+
+                    </LinearLayout>
+            -->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

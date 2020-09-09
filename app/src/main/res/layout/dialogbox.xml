@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="289.9dp"
+    android:layout_height="250.8dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center_horizontal">
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vehicle Status"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="#ffffff"
+        android:weightSum="1">
+        <LinearLayout
+            android:id="@+id/total_veh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/round_rect_brown"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/txt_dash_totalvehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:text="1234"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="#ffffff"
+        android:weightSum="2">
+        <LinearLayout
+            android:id="@+id/running_veh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/round_rect_red"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Static"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/txt_dash_runnvehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="1234"
+
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/stop_veh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/round_rect_green"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dynamic"
+                android:textStyle="bold"
+
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/txt_dash_stopvehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:background="#ffffff"
+        android:weightSum="2">
+        <LinearLayout
+            android:id="@+id/halt_veh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/round_rect_yello"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Idle"
+                android:textStyle="bold"
+
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/txt_dash_idlevehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:text="1234"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/nonpolling_veh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/round_rect_blue"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non Polling"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/txt_dash_nonpollvehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="1234"
+
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Update:"
+            android:textSize="12dip"
+            android:textColor="@color/blue_st"
+
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txtRefreshTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_st"
+            android:textSize="12dip"
+            android:text="12-12-121"
+            android:textStyle="bold"
+            android:layout_marginLeft="6dip"/>
+
+    </LinearLayout>
+
+
+
+    <!--
+        <customfonts.MyTextView_Roboto_Regular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your order is successfully."
+            android:textColor="#111111"
+            android:layout_gravity="center"
+            android:textSize="12.5sp"
+            android:layout_marginTop="11.5sp"/>
+    -->
+    <TextView
+        android:id="@+id/ok_close"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:text="OK"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect_dotted"/>
+
+
+
+
+</LinearLayout>

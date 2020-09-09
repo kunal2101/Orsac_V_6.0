@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_orsac"
+        android:id="@+id/tools"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="9dp"
+        android:layout_below="@+id/tools"
+        app:stackFromEnd="true"
+        app:reverseLayout="true"
+        android:id="@+id/recyclerView"/>
+    <FrameLayout
+        android:id="@+id/frame_floating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="visible"
+        android:layout_marginLeft="1dp">
+
+
+        <ImageView
+            android:id="@+id/home_page"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:src="@drawable/rect2" />
+
+
+        <ImageView
+            android:id="@+id/img_search"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
+            android:paddingLeft="3dp"
+
+            android:src="@drawable/ic_action_1034146" />
+
+
+    </FrameLayout>
+
+</RelativeLayout>

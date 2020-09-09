@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="wolfsoft.com.ordersummary.MainActivity">
+        <include layout="@layout/toolbar_orsac"
+            android:id="@+id/toolBar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_below="@+id/toolBar"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ordersummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginLeft="60dp"
+                        >
+                        <ImageView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/order"
+                            />
+                        <customfonts.MyTextView
+                            android:id="@+id/etp_title"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ETP NO - L3170250/4"
+                            android:textColor="@color/textwhite"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/ordernumber"
+                        android:layout_below="@+id/ordersummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="26dp"
+                        >
+
+                        <customfonts.MyTextView
+                            android:layout_weight="0.8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Code.:"
+                            android:textStyle="bold|italic"
+                            android:textColor="@color/text"
+                            android:textSize="18dp"
+                            android:gravity="right"
+                            android:layout_gravity="center"
+                            />
+
+                        <customfonts.MyTextView
+                            android:id="@+id/code_title"
+                            android:layout_weight=".3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#093013015636"
+                            android:textColor="@color/textred"
+                            android:textSize="16dp"
+                            android:layout_marginLeft="6dp"
+                            android:gravity="left"
+                            android:layout_gravity="center"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/div1"
+                        android:layout_below="@+id/ordernumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/sou_add"
+                        android:layout_below="@+id/div1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        android:layout_marginTop="2dp"
+                        >
+
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Source - "
+                            android:textColor="@color/textred"
+                            android:textSize="18dp"
+                            android:gravity="left"
+                            android:textStyle="bold|italic"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <customfonts.MyTextView
+android:id="@+id/source"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" O.M.C. Ltd."
+                            android:textColor="@color/text"
+                            android:textSize="16dp"
+                            android:singleLine="true"
+                            android:gravity="left"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <!--
+                                            <customfonts.MyTextView
+                                                android:layout_weight=".3"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="#093013015636"
+                                                android:textColor="@color/textred"
+                                                android:textSize="21dp"
+                                                android:layout_marginLeft="6dp"
+                                                android:gravity="left"
+                                                android:layout_gravity="center"
+                                                />
+                        -->
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/div_one"
+                        android:layout_below="@+id/sou_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+                    <LinearLayout
+                        android:id="@+id/des_add"
+                        android:layout_below="@+id/div_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        android:layout_marginTop="2dp"
+                        >
+
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Destination - "
+                            android:textStyle="bold|italic"
+                            android:textColor="@color/textred"
+                            android:singleLine="true"
+                            android:textSize="18dp"
+                            android:gravity="left"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <customfonts.MyTextView
+android:id="@+id/destination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bhusan Power and Steel Ltd.,Bhusan Power and Steel Ltd."
+                            android:textColor="@color/text"
+                            android:singleLine="true"
+                            android:textSize="16dp"
+
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <!--
+                                            <customfonts.MyTextView
+                                                android:layout_weight=".3"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="#093013015636"
+                                                android:textColor="@color/textred"
+                                                android:textSize="21dp"
+                                                android:layout_marginLeft="6dp"
+                                                android:gravity="left"
+                                                android:layout_gravity="center"
+                                                />
+                        -->
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/div_two"
+                        android:layout_below="@+id/des_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+                    <LinearLayout
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div_two"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+
+                            android:layout_width="45dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/date" />
+
+                        <TextView
+                            android:id="@+id/start_day"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:text=" Start Time -Feb 20, 2017"
+                            android:textColor="@color/textred"
+                            android:textSize="21dp" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/div_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/date"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/div"></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/dates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div_new"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+
+                            android:layout_width="45dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="right"
+                            android:src="@drawable/date" />
+
+                        <TextView
+                            android:id="@+id/valid_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:singleLine="true"
+                            android:text="Valid Upto - Feb 20, 2017"
+                            android:textColor="@color/textred"
+                            android:textSize="21dp" />
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/div2"
+                        android:layout_below="@+id/dates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div2"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:src="@drawable/arrow" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="	Circle"
+                                android:textStyle="bold"
+                                android:textColor="@color/text"
+                                android:textSize="18dp"
+
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:text="Mineral Name"
+                                android:textStyle="bold"
+                                android:textColor="@color/text"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:text="Quantity"
+                                android:textStyle="bold"
+                                android:textColor="@color/text"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/circles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="15dp"
+                                android:text="KOIRA"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+
+                            <TextView
+                                android:id="@+id/min_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text=" Iron"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+                            <TextView
+                                android:id="@+id/quitity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="9.760 Ton"
+                                android:textColor="@color/textred"
+                                android:textSize="17dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/div3"
+                        android:layout_below="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+
+                    <LinearLayout
+                        android:id="@+id/items"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div3"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:drawableLeft="@drawable/furni"
+                                android:drawablePadding="13dp"
+                                android:text="Vehicle No -"
+                                android:textStyle="bold"
+                                android:textColor="@color/text"
+                                android:textSize="18dp" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:drawableLeft="@drawable/box"
+                                android:drawablePadding="13dp"
+                                android:text="Device Id -"
+                                android:textStyle="bold"
+                                android:textColor="@color/text"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:drawableLeft="@drawable/furni"
+                                android:drawablePadding="13dp"
+                                android:text="Transporter Name -"
+                                android:textColor="@color/text"
+                                android:textSize="18dp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight="0.8"
+                            android:orientation="vertical">
+
+
+
+                            <TextView
+                                android:id="@+id/vehi_num"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="* OR09K7315"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+                            <TextView
+                                android:id="@+id/devi_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="* JODA"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+                            <TextView
+                                android:id="@+id/tranpo_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="* NA"
+                                android:textColor="@color/textred"
+                                android:textSize="21dp"
+
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+                    <View
+                        android:id="@+id/div4"
+                        android:layout_below="@+id/items"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/div"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        ></View>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/total"
+                        android:layout_below="@+id/div4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:layout_marginTop="16dp"
+                        >
+
+                        <customfonts.MyTextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/textred"
+                            android:textSize="16dp"
+                            android:gravity="right"
+                            android:layout_gravity="bottom"
+                            />
+
+                        <customfonts.MyTextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1999"
+                            android:textColor="@color/textred"
+                            android:textSize="26dp"
+                            android:layout_marginLeft="1dp"
+                            android:gravity="left"
+                            android:layout_gravity="center"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </FrameLayout>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
