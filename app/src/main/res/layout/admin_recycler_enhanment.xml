@@ -926,7 +926,7 @@ android:visibility="gone"
         android:layout_below="@+id/search_location"
         android:visibility="gone">
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -955,7 +955,8 @@ android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.recyclerview.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -965,7 +966,7 @@ android:visibility="gone"
             android:layout_marginTop="2dp"
             android:padding="@dimen/item_offset">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
         <TextView
             android:id="@+id/loin_name"
             android:layout_width="match_parent"

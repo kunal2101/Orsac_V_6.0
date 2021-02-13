@@ -45,7 +45,7 @@
         android:layout_above="@+id/rose_footer"
         android:layout_marginBottom="10dp">
 
-         <android.support.v7.widget.RecyclerView
+         <androidx.recyclerview.widget.RecyclerView
              xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
 
@@ -57,7 +57,7 @@
              android:padding="@dimen/item_offset"
              android:layout_centerInParent="true">
 
-         </android.support.v7.widget.RecyclerView>
+         </androidx.recyclerview.widget.RecyclerView>
 
         <GridView
             android:id="@+id/gridview"

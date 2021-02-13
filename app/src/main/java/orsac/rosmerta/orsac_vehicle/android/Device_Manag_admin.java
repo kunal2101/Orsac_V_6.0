@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,12 +28,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Model.Pojo_Device_Management;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AndyUtils;
+import orsac.rosmerta.orsac_vehicle.android.orsac.model.Pojo_Device_Management;
 
 public class Device_Manag_admin extends AppCompatActivity {
     private List<Pojo_Device_Management> array_admin;
@@ -68,7 +68,7 @@ public class Device_Manag_admin extends AppCompatActivity {
         tool_title.setText("BG Detail");
 
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 1);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager (getApplicationContext(), 1);
         recyclerView.setLayoutManager(layoutManager);
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getApplication(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);

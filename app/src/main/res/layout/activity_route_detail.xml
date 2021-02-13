@@ -14,7 +14,7 @@
             android:id="@+id/toolBar"
             layout="@layout/toolbar_orsac" />
     </RelativeLayout>
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/noPosts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,7 +37,7 @@
             android:textSize="16sp"
             android:layout_gravity="center" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/moreLayout"
@@ -98,7 +98,7 @@
 
 
 
-                    <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                    <orsac.rosmerta.orsac_vehicle.android.textview.TextView_Lato
                        android:id="@+id/etp_no"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                    <orsac.rosmerta.orsac_vehicle.android.textview.Textview_lato_thin
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
@@ -135,7 +135,7 @@
                         android:textSize="14dp" />
 
 
-                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                    <orsac.rosmerta.orsac_vehicle.android.textview.Textview_lato_thin
                         android:id="@+id/imeino"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
                         android:layout_height="25dp"
                         android:src="@drawable/comments" />
 
-                    <orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin
+                    <orsac.rosmerta.orsac_vehicle.android.textview.Textview_lato_thin
                         android:id="@+id/veh_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                <orsac.rosmerta.orsac_vehicle.android.textview.TextView_Lato
                     android:id="@+id/textView_Lato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                     android:visibility="gone"
                     android:textStyle="bold" />
 
-                <orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato
+                <orsac.rosmerta.orsac_vehicle.android.textview.TextView_Lato
                     android:id="@+id/title_veh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -219,20 +219,20 @@
 
 
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     card_view:cardCornerRadius="2dp"
                     card_view:cardElevation="4dp"
 
                     >
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/mRecyclerview"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@+id/line"/>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
 

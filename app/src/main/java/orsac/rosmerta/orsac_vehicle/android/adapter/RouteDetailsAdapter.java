@@ -7,16 +7,16 @@ package orsac.rosmerta.orsac_vehicle.android.adapter;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,8 +32,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import orsac.rosmerta.orsac_vehicle.android.R;
-import orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato;
-import orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin;
+import orsac.rosmerta.orsac_vehicle.android.textview.TextView_Lato;
+import orsac.rosmerta.orsac_vehicle.android.textview.Textview_lato_thin;
 
 public class RouteDetailsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements OnMapReadyCallback {
 

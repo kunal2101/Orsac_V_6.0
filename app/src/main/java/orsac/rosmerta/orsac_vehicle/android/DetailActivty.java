@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AllTracking;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.MapTrackingActivity;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AllTracking;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AndyUtils;
+import orsac.rosmerta.orsac_vehicle.android.orsac.MapTrackingActivity;
 
 /**
  * Created by Diwash Choudhary on 2/6/2017.

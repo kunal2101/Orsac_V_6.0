@@ -1,6 +1,5 @@
 package orsac.rosmerta.orsac_vehicle.android;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,15 +8,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -28,14 +26,12 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Textview.TextView_Lato;
-import orsac.rosmerta.orsac_vehicle.android.Textview.Textview_lato_thin;
+import orsac.rosmerta.orsac_vehicle.android.textview.TextView_Lato;
+import orsac.rosmerta.orsac_vehicle.android.textview.Textview_lato_thin;
 import orsac.rosmerta.orsac_vehicle.android.adapter.RouteDetailsAdapter;
 
 public class RouteDetailActivity extends AppCompatActivity {
@@ -70,7 +66,7 @@ TextView_Lato etp_no ;
         tool_title.setText("Running Route");
         mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerview);
         noPosts = (CardView)findViewById(R.id.noPosts);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(RouteDetailActivity.this, LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager (RouteDetailActivity.this, LinearLayoutManager.VERTICAL, false));
         preferenceHelper = new PreferenceHelper(this);
         try {
             Intent inty = getIntent();

@@ -42,6 +42,11 @@ public static final String BASE_URL_OMVTS="https://vtscloud.co.in/rtlorsacandroi
     public static final String     GET_BG_AMOUNT_UPDATE =  "updateBgData";
     public static final String     GET_CHANGEURLE =  "changeUrl";
 
+
+    // Deepak Sercvice
+
+    public static  final String GET_PDF_DATEWISE ="/api/reportDateRange/jsndfoiuhsw/";
+
     //http://vts.orissaminerals.gov.in/rtlorsacandroid/rest/CallService/updateBgData?loginid=10002&bgamount=3750000&vehicleallowed=15000
 
 

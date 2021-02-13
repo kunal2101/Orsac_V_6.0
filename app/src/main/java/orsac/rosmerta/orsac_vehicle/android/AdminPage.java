@@ -9,10 +9,6 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -34,7 +34,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -42,12 +41,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AllMines;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.BarGraphChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.CirclePieChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Orsac_Admin_sec_Trip_count;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.PieNewChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.StackedbarChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AllMines;
+import orsac.rosmerta.orsac_vehicle.android.orsac.BarGraphChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.CirclePieChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.Orsac_Admin_sec_Trip_count;
+import orsac.rosmerta.orsac_vehicle.android.orsac.PieNewChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.StackedbarChart;
 
 /**
  * Created by Diwash Choudhary on 1/21/2017.

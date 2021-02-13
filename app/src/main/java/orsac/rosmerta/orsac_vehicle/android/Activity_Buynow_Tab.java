@@ -1,22 +1,20 @@
 package orsac.rosmerta.orsac_vehicle.android;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
+
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Fragment.FragmentSimRenewal;
-import orsac.rosmerta.orsac_vehicle.android.Fragment.Fragment_AMC;
-import orsac.rosmerta.orsac_vehicle.android.Fragment.Fragment_New_Device_Purchas;
+import orsac.rosmerta.orsac_vehicle.android.fragment.FragmentSimRenewal;
+import orsac.rosmerta.orsac_vehicle.android.fragment.Fragment_AMC;
+import orsac.rosmerta.orsac_vehicle.android.fragment.Fragment_New_Device_Purchas;
 import orsac.rosmerta.orsac_vehicle.android.adapter.TabAdapter;
 
 

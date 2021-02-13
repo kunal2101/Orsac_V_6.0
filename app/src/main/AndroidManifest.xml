@@ -3,22 +3,10 @@
     package="orsac.rosmerta.orsac_vehicle.android"
     android:targetSandboxVersion="1">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-feature android:name="android.hardware.location.network" />
-    <uses-feature android:name="android.hardware.location.gps" />
-
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name=".AppController"
         android:allowBackup="true"
+
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,12 +15,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-
+        <activity android:name=".orsac.PdfWebView"></activity>
+        <activity
+            android:name=".orsac.PaymentHistoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".orsac.RouteDeviationList"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.PaymentResult"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".orsac.PaymentRenewalPage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".orsac.PaymentLogin"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".StaticDynamicDetail"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
@@ -40,11 +42,6 @@
         <activity
             android:name=".RouteDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCaOTVsYC795NC7F32XTkkokArnJagEuTI" />
-
         <activity
             android:name=".DetailActivty"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
@@ -61,7 +58,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Test"
@@ -76,44 +72,35 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Orsac.AllTracking"
+            android:name=".orsac.AllTracking"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.ViewPagerActivity"
+            android:name=".orsac.ViewPagerActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".New_Recycler.MainActivity_Recyler"
+            android:name=".new_recycler.MainActivity_Recyler"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".PieChart"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.StackedbarChart"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
-
-        </activity>
-        <activity
-            android:name=".RadarChartActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
-
-        </activity>
-
-        <activity
-            android:name=".Orsac.PieNewChart"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
-        </activity>
-        <activity
-            android:name=".Orsac.BarGraphChart"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
-
-        </activity>
-        <activity
-            android:name=".Orsac.DetailActivty_Sec"
+            android:name=".orsac.StackedbarChart"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.CirclePieChart"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
-        </activity>
+            android:name=".RadarChartActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.PieNewChart"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.BarGraphChart"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.DetailActivty_Sec"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.CirclePieChart"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
@@ -123,94 +110,90 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Orsac.CircleActivity"
+            android:name=".orsac.CircleActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Orsac_Admin_sec_Trip_count"
+            android:name=".orsac.Orsac_Admin_sec_Trip_count"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Orsac.LivestatusActivity"
+            android:name=".orsac.LivestatusActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Orsac.LivestatusDetailsActivty"
+            android:name=".orsac.LivestatusDetailsActivty"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".Orsac.Orsac_admin_third_deta" />
+        <activity android:name=".orsac.Orsac_admin_third_deta" />
         <activity
-            android:name=".Orsac.TermsAndConditionActivity_Orsac"
+            android:name=".orsac.TermsAndConditionActivity_Orsac"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Orsac_TrackingOnMap"
+            android:name=".orsac.Orsac_TrackingOnMap"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Orsac_About_us"
+            android:name=".orsac.Orsac_About_us"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Orsac.OsmMap"
+            android:name=".orsac.OsmMap"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.TrackOnGoogleMap"
+            android:name=".orsac.TrackOnGoogleMap"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.CircleActivity_Click"
+            android:name=".orsac.CircleActivity_Click"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Demo_CircleActivity"
+            android:name=".orsac.Demo_CircleActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.MapTrackingActivity"
+            android:name=".orsac.MapTrackingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.MapTrackingActivity_Circle"
+            android:name=".orsac.MapTrackingActivity_Circle"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".PieNChart"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Orsac_circle_detail"
+            android:name=".orsac.Orsac_circle_detail"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".orsac.PieNewChart_Start"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".orsac.Orsac_feedback"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
 
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
         <activity
-            android:name=".Orsac.PieNewChart_Start"
+            android:name=".orsac.MapTrackingActivity_Live_Status"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.Orsac_feedback"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name=".Orsac.MapTrackingActivity_Live_Status"
+            android:name=".orsac.NearByMines"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.NearByMines"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
-        <activity
-            android:name=".Orsac.AllMines"
+            android:name=".orsac.AllMines"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".SearchVehicleWise"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.VehicelWise_Deatail"
+            android:name=".orsac.VehicelWise_Deatail"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.VehicelWise_Map"
+            android:name=".orsac.VehicelWise_Map"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
-            android:name=".Orsac.NearByMeVehicle"
+            android:name=".orsac.NearByMeVehicle"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".ServiceList"
@@ -231,8 +214,33 @@
         <activity
             android:name=".Activity_Buynow_Tab"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
-        <activity android:name=".ActivityPaymentWebView"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" ></activity>
+        <activity
+            android:name=".ActivityPaymentWebView"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCaOTVsYC795NC7F32XTkkokArnJagEuTI" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

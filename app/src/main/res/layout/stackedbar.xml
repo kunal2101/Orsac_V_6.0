@@ -54,11 +54,13 @@
         android:visibility="gone"
         android:layout_below="@+id/toolBar"
         android:textColor="@color/fb_blue"/>
+<!--
     <com.numetriclabz.numandroidcharts.StackedBarChart
         android:id="@+id/chart"
         android:layout_height="270dp"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"/>
+-->
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"

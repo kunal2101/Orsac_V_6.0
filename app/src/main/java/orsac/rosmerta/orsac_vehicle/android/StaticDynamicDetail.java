@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -20,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -35,11 +35,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Admin_sec_bean;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Orsac_Admin_sec_Trip_count;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.SimpleAdapter;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.StaticDynamicAdapter;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.StaticDynamicModel;
+import orsac.rosmerta.orsac_vehicle.android.orsac.StaticDynamicAdapter;
+import orsac.rosmerta.orsac_vehicle.android.orsac.StaticDynamicModel;
 
 public class StaticDynamicDetail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -71,7 +68,7 @@ public class StaticDynamicDetail extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 1);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager (getApplicationContext(), 1);
         mRecyclerView.setLayoutManager(layoutManager);
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getApplication(), R.dimen.item_offset);
         mRecyclerView.addItemDecoration(itemDecoration);
@@ -259,7 +256,7 @@ public class StaticDynamicDetail extends AppCompatActivity {
                         }*/
                     }
                 }
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(StaticDynamicDetail.this));
+                mRecyclerView.setLayoutManager(new LinearLayoutManager (StaticDynamicDetail.this));
                 mAdapter = new StaticDynamicAdapter(filteredList, StaticDynamicDetail.this);
                 mRecyclerView.setAdapter(mAdapter);
                 mAdapter.notifyDataSetChanged();  // data set changed

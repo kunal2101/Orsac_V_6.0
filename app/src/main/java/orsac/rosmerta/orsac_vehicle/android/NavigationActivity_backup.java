@@ -8,18 +8,17 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,6 +32,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -42,7 +44,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -50,13 +51,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.BarGraphChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.CirclePieChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.NavigationDrawerFragment;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Orsac_Admin_sec_Trip_count;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.PieNewChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.StackedbarChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AndyUtils;
+import orsac.rosmerta.orsac_vehicle.android.orsac.BarGraphChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.CirclePieChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.NavigationDrawerFragment;
+import orsac.rosmerta.orsac_vehicle.android.orsac.Orsac_Admin_sec_Trip_count;
+import orsac.rosmerta.orsac_vehicle.android.orsac.PieNewChart;
+import orsac.rosmerta.orsac_vehicle.android.orsac.StackedbarChart;
 
 public class NavigationActivity_backup extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -160,7 +161,7 @@ int tot_device, tot_install;
         navi_frame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawer.openDrawer(GravityCompat.START);
+                drawer.openDrawer( GravityCompat.START);
             }
         });
         ImageView imgview = (ImageView) findViewById(R.id.navigationIcon);

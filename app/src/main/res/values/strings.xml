@@ -1,22 +1,22 @@
 <resources xmlns:text-align="http://schemas.android.com/tools">
+    <color name="text">#3b3b3b</color>
+    <color name="textsub">#aaaaaa</color>
     <string name="app_name">OMVTS ORSAC</string>
     <string name="skip">SKIP</string>
+
     <string name="start">GOT IT</string>
     <string name="mines">Select Mines</string>
-
     <string name="toast_no_internet">Internet not available</string>
     <string name="dialog_no_internet">No Internet</string>
     <string name="dialog_no_inter_message">You have not active internet connection.</string>
     <string name="dialog_enable_3g">Enable 3G</string>
     <string name="dialog_enable_wifi">Enable WIFI</string>
+
     <string name="dialog_exit">Exit</string>
     <string name="spinner_title">Select Company </string>
-
     <string name="next">NEXT</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="next_circle">NEXT</string>
-    <color name="text">#3b3b3b</color>
-    <color name="textsub">#aaaaaa</color>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="message">Developed &amp; Designed By Rosmerta Technologies Ltd.</string>
@@ -43,6 +43,11 @@
     <string name="direc"><p> <b>DIRECTION :</b><p> </p> ----- </p> </string>
 
     <string name="tot_insta"><p><b>Installed Device  \n</b></p>  </string>
+    <string name="com_name">A - Trimble \n B - Trimble \n C - Trimble \n D - Atlanta \n E - Rosmerta \n F - Arya Omnitalk \n E - Fastrackerz</string>
+    <string name="company_name">A - Trimble Mobility solution pvt Ltd \nB - Rosmerta Autotech pvt Ltd \nC - Fastrackerz \nD - Atlanta \nE - Arya Omnitalk wireless pvt Ltd</string>
+    <string name="pdf_url">PDF URL</string>
+
+    <string name="permission_request_message">Storage permission allows us to save pdf.</string>
     <string-array name="countries_array">
         <item>Afghanistan</item>
         <item>Albania</item>
@@ -53,7 +58,5 @@
         <item>Anguilla</item>
         <item>Antarctica</item>
     </string-array>
-    <string name="com_name">A - Trimble \n B - Trimble \n C - Trimble \n D - Atlanta \n E - Rosmerta \n F - Arya Omnitalk \n E - Fastrackerz</string>
-    <string name="company_name">A - Trimble Mobility solution pvt Ltd \nB - Rosmerta Autotech pvt Ltd \nC - Fastrackerz \nD - Atlanta \nE - Arya Omnitalk wireless pvt Ltd</string>
 </resources>
 

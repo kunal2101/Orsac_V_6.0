@@ -462,7 +462,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/non_active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
@@ -507,7 +506,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -517,7 +516,7 @@
             android:layout_marginTop="2dp"
             android:padding="@dimen/item_offset">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
         <TextView
             android:id="@+id/loin_name"
             android:layout_width="match_parent"

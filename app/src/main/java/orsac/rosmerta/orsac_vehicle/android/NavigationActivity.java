@@ -1,8 +1,8 @@
 package orsac.rosmerta.orsac_vehicle.android;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,30 +10,27 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-import android.os.StrictMode;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,14 +38,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.itextpdf.text.Anchor;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
@@ -62,7 +67,6 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.Section;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -74,33 +78,28 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Method;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Dialogs.PrettyDialog;
-import orsac.rosmerta.orsac_vehicle.android.Dialogs.PrettyDialogCallback;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AllMines;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.BarGraphChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.CircleActivity;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Demo_CircleActivity;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Model.Pojo_Device_Management;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.NavigationDrawerFragment;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Orsac_Admin_sec_Trip_count;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.StackedbarChart;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.ViewPagerActivity;
+import orsac.rosmerta.orsac_vehicle.android.dialogs.PrettyDialog;
+import orsac.rosmerta.orsac_vehicle.android.dialogs.PrettyDialogCallback;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AndyUtils;
+import orsac.rosmerta.orsac_vehicle.android.orsac.CircleActivity;
+import orsac.rosmerta.orsac_vehicle.android.orsac.model.Pojo_Device_Management;
+import orsac.rosmerta.orsac_vehicle.android.orsac.NavigationDrawerFragment;
+import orsac.rosmerta.orsac_vehicle.android.orsac.Orsac_Admin_sec_Trip_count;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -146,6 +145,7 @@ public class NavigationActivity extends AppCompatActivity
     FrameLayout frame_floating;
     String totalActive;
     PreferenceHelper preferenceHelper;
+    Boolean stat_vs_dynanic_click = true;
 
     // Float[] value_inst;
     private ArrayList<HashMap<String, String>> getData;
@@ -161,11 +161,16 @@ public class NavigationActivity extends AppCompatActivity
     View myView;
     LinearLayout line_tile;
     boolean isUp;
+    DatePickerDialog   picker;
+    String st_dayString,   selected_from_date="",selected_to_date;
+    int dayInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+       // getDateArray();
+       // downloadPdf();
 
         i3ms_redg =(TextView)findViewById(R.id.i3ms_redg);
         etp_in_180=(TextView) findViewById(R.id.etp_in_180);
@@ -190,7 +195,7 @@ public class NavigationActivity extends AppCompatActivity
                    // slideDown(myView);
                   //  myButton.setText("Slide up");
                     line_tile.setVisibility(View.VISIBLE);
-                    arraow.setBackground(ContextCompat.getDrawable(NavigationActivity.this, R.drawable.ic_arrow_up));
+                    arraow.setBackground( ContextCompat.getDrawable(NavigationActivity.this, R.drawable.ic_arrow_up));
 
                 } else {
                     //slideUp(myView);
@@ -267,9 +272,16 @@ public class NavigationActivity extends AppCompatActivity
                 startActivity(inty);
             }
         });
+
         frame_floating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               // Toast.makeText ( NavigationActivity.this , "Hello" , Toast.LENGTH_SHORT ).show ( );
+  /*Intent inty = new Intent ( NavigationActivity.this , PdfWebView.class );
+  startActivity ( inty );*/
+                prettyDialog_Pdf_report();
+
+/*
                 try {
                     Document document = new Document();
                     // write the document content
@@ -323,6 +335,7 @@ public class NavigationActivity extends AppCompatActivity
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+*/
             }
         });
         try {
@@ -404,6 +417,7 @@ public class NavigationActivity extends AppCompatActivity
         now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = true;
                 now.setBackgroundResource(R.drawable.button_selecte);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -417,6 +431,14 @@ public class NavigationActivity extends AppCompatActivity
                     AndyUtils.showCustomProgressDialog(NavigationActivity.this,
                             "Fetching Information Please wait...", false, null);
                   //  array_admin.clear();
+                    if(getData != null) {
+                        getData.clear ( );
+                    }
+
+                    if(array_admin != null) {
+                        array_admin.clear();
+                    }
+
                     new preProcessDash().execute();
                 }else{
                     Toast.makeText(NavigationActivity.this,"No Internet , Please Try After sometime",Toast.LENGTH_LONG).show();
@@ -427,6 +449,7 @@ public class NavigationActivity extends AppCompatActivity
         HRs_24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_selecte);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -440,6 +463,7 @@ public class NavigationActivity extends AppCompatActivity
                     AndyUtils.showCustomProgressDialog(NavigationActivity.this,
                             "Fetching Information Please wait...", false, null);
                     //array_admin.clear();
+
                     new preProcessDash_daywise().execute("1");
                 }else{
                     Toast.makeText(NavigationActivity.this,"No Internet , Please Try After sometime",Toast.LENGTH_LONG).show();
@@ -451,6 +475,7 @@ public class NavigationActivity extends AppCompatActivity
         hrs_48.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_selecte);
@@ -474,6 +499,7 @@ public class NavigationActivity extends AppCompatActivity
         days_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -497,6 +523,7 @@ public class NavigationActivity extends AppCompatActivity
         day_15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -520,6 +547,7 @@ public class NavigationActivity extends AppCompatActivity
         day_30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -544,6 +572,7 @@ public class NavigationActivity extends AppCompatActivity
         day_90.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -567,6 +596,7 @@ public class NavigationActivity extends AppCompatActivity
         day_180.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stat_vs_dynanic_click = false;
                 now.setBackgroundResource(R.drawable.button_bg);
                 HRs_24.setBackgroundResource(R.drawable.button_bg);
                 hrs_48.setBackgroundResource(R.drawable.button_bg);
@@ -601,8 +631,10 @@ public class NavigationActivity extends AppCompatActivity
         lyn_active_vtus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isConnection()){
+                if (isConnection() && stat_vs_dynanic_click){
                     new getStaticDynamicCount().execute();
+                }else {
+                    Toast.makeText ( NavigationActivity.this , "Only Working on Current Day ETP" , Toast.LENGTH_SHORT ).show ( );
                 }
             }
         });
@@ -1242,7 +1274,7 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen( GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -1493,7 +1525,7 @@ public class NavigationActivity extends AppCompatActivity
                 HttpClient httpclient = new DefaultHttpClient();
                 //http://vts.orissaminerals.gov.in/rtlorsacandroid/rest/CallService/getlivevehicles?vehicleno=49179
               //  HttpGet httppost = new HttpGet("http://vts.orissaminerals.gov.in/rtlorsacandroid/rest/CallService/etptriplivesKunal?circle=All&company=All&vehicleno=All&query=NA");
-                HttpGet httppost = new HttpGet(preferenceHelper.getUrls() +"/"+UrlContants.ETP_MOB_DASH_DATA_SPECIFIC+"?circle=All&company=All&vehicleno=All&query=NA");
+                HttpGet httppost = new HttpGet(preferenceHelper.getUrls() +":8022/download_pdf/onehourpdf/");
 
                 // Add your data
                 //httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
@@ -2243,18 +2275,23 @@ private static void addMetaData(Document document) {
         }
     }
 
-    private void prettyDialog_report(){
+    private void prettyDialog_Pdf_report(){
         final PrettyDialog dialog = new PrettyDialog(this);
         dialog
                 .setTitle("Select Report Option")
                 .setMessage("")
                 .setIcon(R.drawable.pdlg_icon_info,R.color.pdlg_color_blue,null)
-                .addButton("Daily Distance", R.color.pdlg_color_white, R.color.pdlg_color_green, new PrettyDialogCallback() {
+                .addButton("Current Date", R.color.pdlg_color_white, R.color.pdlg_color_green, new PrettyDialogCallback() {
                     @Override
                     public void onClick() {
 
-                       /* Intent intent = new Intent(TestActivity.this, ReportDailyDistanceActivity.class);
-                        startActivity(intent);*/
+                        try {
+                            Intent browserIntent = new Intent ( Intent.ACTION_VIEW , Uri.parse ( "http://vts.odishaminerals.gov.in/MISREPORT/vendorstatus.pdf" ) );
+                            startActivity ( browserIntent );
+                        }catch (Exception e){
+                            e.getMessage ();
+                            Toast.makeText ( NavigationActivity.this , "Error while loading PDF..." , Toast.LENGTH_SHORT ).show ( );
+                        }
                         dialog.dismiss();
                         //Toast.makeText(Language_Setting.this,"OK selected",Toast.LENGTH_SHORT).show();
                         return;
@@ -2262,49 +2299,241 @@ private static void addMetaData(Document document) {
 
                     }
                 })
-                .addButton("Over Speed", R.color.pdlg_color_white, R.color.pdlg_color_red, new PrettyDialogCallback() {
+                .addButton("Date Range Selection ", R.color.pdlg_color_white, R.color.pdlg_color_red, new PrettyDialogCallback() {
                     @Override
                     public void onClick() {
 
-                      /*  Intent intent = new Intent(TestActivity.this, ReportOverspeedActivity.class);
-                        startActivity(intent);*/
+                        downloadPdf();
                         dialog.dismiss();
                         //Toast.makeText(Language_Setting.this,"OK selected",Toast.LENGTH_SHORT).show();
                         return;
 
 
                     }
-                })
-                .addButton("Idle Report", R.color.pdlg_color_white, R.color.pdlg_color_blue, new PrettyDialogCallback() {
-                    @Override
-                    public void onClick() {
-
-                      /*  Intent intent = new Intent(TestActivity.this, KK_Idle_Search_Activity.class);
-                        startActivity(intent);*/
-                        dialog.dismiss();
-                        //Toast.makeText(Language_Setting.this,"OK selected",Toast.LENGTH_SHORT).show();
-                        return;
-
-
-                    }
-                })
-                .addButton("Vehicle History", R.color.pdlg_color_white, R.color.pdlg_color_red, new PrettyDialogCallback() {
-                    @Override
-                    public void onClick() {
-                      /*  Intent intent = new Intent(TestActivity.this, KK_HistoryActivity.class);
-                        startActivity(intent);*/
-
-                        dialog.dismiss();
-                        //Toast.makeText(Language_Setting.this,"Cancel selected",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
                 });
+
 
         dialog.show();
     }
 
 
+
+
+    public  void downloadPdf(){
+        selected_from_date ="";
+        selected_to_date ="";
+        final Dialog myDialog = new Dialog(NavigationActivity.this);
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        myDialog.getWindow();
+       // myDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        myDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        myDialog.setCancelable(true);
+        myDialog.setContentView(R.layout.dialog_calender_pdf_download);
+
+        Button btn_done = (Button)myDialog.findViewById(R.id.btn_done);
+        TextView tv_fromdate = (TextView)myDialog.findViewById(R.id.tv_fromdate);
+        TextView tv_todate = (TextView)myDialog.findViewById(R.id.tv_todate);
+
+        tv_fromdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selected_from_date ="";
+                selected_to_date ="";
+                tv_fromdate.setText("Select From Date");
+                tv_todate.setText("Select End Date");
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+
+                int year = cldr.get(Calendar.YEAR);
+                   picker = new DatePickerDialog( NavigationActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                String monthString = (monthOfYear + 1) < 10 ? "0"+(monthOfYear + 1) : ""+(monthOfYear + 1);
+                                dayInt = dayOfMonth;
+                                st_dayString = dayOfMonth < 10 ? "0"+dayOfMonth : ""+dayOfMonth;
+
+                                // selected_from_date = st_dayString + "-" +monthString + "-" +year;
+                                selected_from_date= year + "-" +monthString + "-" +st_dayString;
+                                 Toast.makeText(NavigationActivity.this, selected_from_date, Toast.LENGTH_LONG).show();
+                                tv_fromdate.setText(st_dayString + "-" +monthString + "-" +year);
+                            }
+                        }, year, month, day);
+                picker.show();
+                cldr.add(Calendar.MONTH, -3); // subtract 2 years from now
+                picker.getDatePicker().setMinDate(cldr.getTimeInMillis());
+                final Calendar _cen = Calendar.getInstance();
+
+
+                picker.getDatePicker().setMaxDate(_cen.getTimeInMillis());
+
+                //picker.getDatePicker().setMinDate(cldr.getTimeInMillis()  - 1000);
+
+
+
+            }
+        });
+
+        tv_todate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(selected_from_date.equalsIgnoreCase ( "" )){
+                    Toast.makeText ( NavigationActivity.this , "Please Select From Day First " , Toast.LENGTH_SHORT ).show ( );
+
+                }else {
+                    final Calendar cldr = Calendar.getInstance();
+                    int day = cldr.get(Calendar.DAY_OF_MONTH);
+                    int month = cldr.get(Calendar.MONTH);
+
+                    int year = cldr.get(Calendar.YEAR);
+                    picker = new DatePickerDialog( NavigationActivity.this,
+                            new DatePickerDialog.OnDateSetListener() {
+                                @Override
+                                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                    String monthString = (monthOfYear + 1) < 10 ? "0"+(monthOfYear + 1) : ""+(monthOfYear + 1);
+                                    String dayString = dayOfMonth < 10 ? "0"+dayOfMonth : ""+dayOfMonth;
+
+                                    //selected_to_date =dayString + "-" + monthString + "-" + year;
+                                    selected_to_date =year + "-" + monthString + "-" + dayString;
+
+                                    tv_todate.setText(dayString + "-" + monthString + "-" + year);
+                                }
+                            }, year, month, day);
+                    picker.show();
+                    try {
+                        final Calendar _cen = Calendar.getInstance();
+                        long CurrentMilliSeconds = _cen.getTimeInMillis();
+                        long milliseconds_sec;
+                        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+                        Date d = f.parse(selected_from_date);
+                        long milliseconds = d.getTime();
+                        if(CurrentMilliSeconds - milliseconds >= 7*86400000){
+                            milliseconds_sec = milliseconds+(7*86400000);
+                        }else {
+                            milliseconds_sec = milliseconds+(CurrentMilliSeconds - milliseconds);
+                        }
+
+
+                        Log.d("milliseconds",milliseconds+"");
+                        picker.getDatePicker().setMinDate(milliseconds);
+                        picker.getDatePicker().setMaxDate(milliseconds_sec);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }                    }
+
+
+
+
+
+
+                //picker.getDatePicker().setMinDate(cldr.getTimeInMillis()  - 1000);
+
+
+
+            }
+        });
+        btn_done.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick ( View view ) {
+                if (selected_to_date.equals ( "" ) || selected_from_date.equals ( "" )) {
+                    Toast.makeText ( NavigationActivity.this , "Please Select Date..." , Toast.LENGTH_SHORT ).show ( );
+                } else {
+                    Log.d ( "diwa" , selected_from_date + selected_to_date );
+                    gerPdfDateWise ( selected_from_date , selected_to_date );
+                }
+            }
+        } );
+
+
+        myDialog.show();
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void gerPdfDateWise(String from_date , String to_date ){
+        String url ="";
+        String  tag_string_req = "string_req";
+        String pdfName =  DateFormat.getDateTimeInstance()
+                .format(new Date());;
+        ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(NavigationActivity.this);
+        progressDialog.setMessage("Loading....");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
+        JSONObject requestJson = new JSONObject();
+        //{"userLogin":"Admin","userPassword":"Admin@123"}
+
+        try{
+           // requestJson = {"dates":["2020-12-01","2020-12-02","2020-12-03","2020-12-04","2020-12-05","2020-12-06","2020-12-07","2020-12-08","2020-12-09","2020-12-10"],"file_name":"mypdf"}
+         JSONArray jsonArray = new JSONArray();
+            String ss = from_date;
+            String ee = to_date;
+            LocalDate start = LocalDate.parse(ss);
+            LocalDate end = LocalDate.parse(ee);
+            List<String> totalDates = new ArrayList<>();
+            while (!start.isAfter(end)) {
+                totalDates.add(start+"");
+                jsonArray.put(start.toString());
+                start = start.plusDays(1);
+                Log.d("totalDates",totalDates+"k");
+            }
+            requestJson.put("dates",jsonArray);
+            requestJson.put("fileName","VendorDetail_"+pdfName);
+               System.out.println("Diwas " +requestJson);
+            System.out.println("Diwas " +preferenceHelper.getUrls());
+            Log.d("Diwas " ,preferenceHelper.getUrls().toString ());
+        }catch (Exception ev){
+            System.out.print(ev.getMessage());
+        }
+        if(preferenceHelper.getUrls ().equalsIgnoreCase ( "http://vts.orissaminerals.gov.in/rtlorsacandroid/rest/CallService" )){
+            url ="http://vts.odishaminerals.gov.in:8022/api/reportDateRange/jsndfoiuhsw/";
+        }else{
+            url ="https://vtscloud.co.in/api/reportDateRange/jsndfoiuhsw/";
+        }
+
+
+        JsonObjectRequest req = new JsonObjectRequest(url, requestJson,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            if(response.getString ( "status" ).equalsIgnoreCase ( "success" )){
+                                try {
+                                    Log.d ( "Diwa", response.getString ( "status" )+"URL");
+                                    Intent browserIntent = new Intent ( Intent.ACTION_VIEW , Uri.parse ( "http://vts.odishaminerals.gov.in/MISREPORT/"+response.getString ( "data" ) ) );
+                                    startActivity ( browserIntent );
+                                }catch (Exception e){
+                                    e.getMessage ();
+                                    Toast.makeText ( NavigationActivity.this , "Error while loading PDF..." , Toast.LENGTH_SHORT ).show ( );
+                                }
+                            }
+                            Log.d("Diwas",response.toString());
+                             progressDialog.dismiss();
+                        } catch (Exception e) {
+                            progressDialog.dismiss();
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+                VolleyLog.e("Error: ", error.getMessage());
+            }
+        }){
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(req, tag_string_req);
+    }
 
 
 }

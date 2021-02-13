@@ -12,11 +12,12 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,9 +42,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-
-import static android.app.Activity.RESULT_OK;
+import orsac.rosmerta.orsac_vehicle.android.orsac.AndyUtils;
 
 public class VendorRating extends AppCompatActivity {
     private RecyclerView recyclerview;
@@ -77,7 +76,7 @@ public class VendorRating extends AppCompatActivity {
         tool_title.setText("Vendor Rating");
         recyclerview = (RecyclerView) findViewById(R.id.recyclerView);
      recyclerview.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 1);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager (getApplicationContext(), 1);
         recyclerview.setLayoutManager(layoutManager);
 
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getApplication(), R.dimen.item_offset);

@@ -9,7 +9,7 @@
     android:layout_marginLeft="9.3dp"
     android:layout_marginRight="9.3dp"
     android:orientation="vertical">
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     android:layout_marginLeft="10.3dp"
     android:layout_marginRight="10.1dp"
     app:cardCornerRadius="5.8dp"
@@ -190,7 +190,7 @@
         android:textColor="#fbfbfb"
         android:textSize="11.4sp" />
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"

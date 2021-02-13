@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp">
+    <TextView
+        android:id="@+id/txtmobepay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sfprorounded_semibold"
+        android:text="Vendorwise Device Polling Status "
+        android:textColor="@color/bill_back_color"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16.7dp"
+        android:layout_marginTop="33.3dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="16.9dp"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_empty"
+                android:layout_width="53.3dp"
+                android:layout_height="53.3dp"
+
+                app:lottie_fileName="calenderfromdate.json"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_fromdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="16.7dp"
+                android:text="Select From Date"
+                android:textSize="15dp"
+                android:textColor="@color/hint_txt_color"
+                android:textColorHint="@color/hint_txt_color"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="70.2dp"
+            android:layout_marginTop="5.8dp"
+            android:background="@color/hint_txt_color" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_green"
+                android:layout_width="53.3dp"
+                android:layout_height="53.3dp"
+
+                app:lottie_fileName="calendertodate.json"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_todate"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="16.7dp"
+                android:text="Select To Date"
+                 android:textSize="15dp"
+                android:textColor="@color/hint_txt_color"
+                android:textColorHint="@color/hint_txt_color"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="70.2dp"
+            android:layout_marginTop="5.8dp"
+            android:background="@color/hint_txt_color" />
+
+
+    </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16.6dp"
+            android:visibility="invisible"
+            android:src="@drawable/ic_reverse" />
+
+</LinearLayout>
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:text="SUBMIT"
+        android:paddingHorizontal="50dp"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:layout_marginTop="45.1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btnrectangle"/>
+
+</LinearLayout>
+
+
+

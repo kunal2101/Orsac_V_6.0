@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="orsac.rosmerta.orsac_vehicle.android.Orsac.AllMines">
+    tools:context="orsac.rosmerta.orsac_vehicle.android.orsac.AllMines">
     <include
         android:id="@+id/toolBar"
         layout="@layout/toolbar_orsac" />

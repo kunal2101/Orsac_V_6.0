@@ -7,7 +7,7 @@
     android:padding="10dp"
     >
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_titleMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:textColor="@color/pdlg_color_white"
         android:textAllCaps="false"/>
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_okCancel"
         android:layout_width="match_parent"
         android:layout_marginTop="1dp"
@@ -29,7 +29,7 @@
         android:background="@color/pdlg_color_red"
         android:textAllCaps="false"/>
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_allCustom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

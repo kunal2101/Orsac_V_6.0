@@ -2,9 +2,7 @@ package orsac.rosmerta.orsac_vehicle.android;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,22 +10,33 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.provider.SearchRecentSuggestions;
 import android.provider.Settings;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
-import android.telephony.SmsManager;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -35,51 +44,51 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.airbnb.lottie.LottieAnimationView;
+import com.anychart.graphics.vector.Fill;
+import com.cunoraz.gifview.library.GifView;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
 import com.google.android.gms.common.api.GoogleApiClient;
-
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-
-import javax.net.ssl.HttpsURLConnection;
-
+import org.jsoup.Jsoup;
 import customfonts.MyTextView;
-import orsac.rosmerta.orsac_vehicle.android.Dialogs.PrettyDialog;
-import orsac.rosmerta.orsac_vehicle.android.Dialogs.PrettyDialogCallback;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.AndyUtils;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.Orsac_feedback;
-import orsac.rosmerta.orsac_vehicle.android.Orsac.VehicelWise_Deatail;
+import orsac.rosmerta.orsac_vehicle.android.dialogs.PrettyDialog;
+import orsac.rosmerta.orsac_vehicle.android.dialogs.PrettyDialogCallback;
+import orsac.rosmerta.orsac_vehicle.android.orsac.VehicelWise_Deatail;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Timer;
 
 public class SearchVehicleWise extends AppCompatActivity {
     TextView vehicle_textview, tot_avi , txt1 ,textView_version_name,etp_in_180,curr_etp,operational_truck,active_live,non_active;
-    Button search_btn_main,msg_btn,rating_btn;
+    Button search_btn_main,rating_btn;
+    LottieAnimationView msg_btn;
     ImageView serch_btn;
     String vehicelNo;
     private MyTextView tool_title;
     private ImageView tool_back_icon;
     private AlertDialog internetDialog;
     private boolean isNetDialogShowing = false;
-    LinearLayout lin_tot_install, lyn_active_vtu;
+   // LinearLayout lin_tot_install, lyn_active_vtu;
+    CardView lin_tot_install;
     String totalinstalled ="",msg_mob="";
     FrameLayout frame_floating,frame_device_managment;
     PreferenceHelper preferenceHelper;
@@ -88,10 +97,24 @@ public class SearchVehicleWise extends AppCompatActivity {
     int total_i3ms_s=0;
     GoogleApiClient mGoogleApiClient;
     final static int REQUEST_LOCATION = 199;
+
+    LinearLayout lin_center_view;
+    GifView gifView1;
+   // View error_view;
+    FrameLayout error_frame;
+    TextView textView17, txt111, textView11, textView13, textView15, textView19;
+
+    ArrayList<HashMap<String, Integer>> activeCountList;
+    boolean getVersionCodeValue = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_vehicle_wise);
+        setContentView(R.layout.dashboard_layout_new);
+        //setContentView(R.layout.activity_search_vehicle_wise);
+        Window window = SearchVehicleWise.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(SearchVehicleWise.this, R.color.starusBarColor));
 
         tot_avi = (TextView) findViewById(R.id.tot_avi);
         etp_in_180=(TextView) findViewById(R.id.etp_in_180);
@@ -100,16 +123,41 @@ public class SearchVehicleWise extends AppCompatActivity {
         active_live= (TextView) findViewById(R.id.active_live);
         non_active= (TextView) findViewById(R.id.non_active);
         rating_btn=(Button)findViewById(R.id.rating_btn) ;
-        lyn_active_vtu = (LinearLayout) findViewById(R.id.lyn_active_vtu);
-        frame_device_managment= (FrameLayout)findViewById(R.id.frame_device_managment);
+        textView17 = findViewById(R.id.textView17);
+        txt111 = findViewById(R.id.txt111);
+        textView11 = findViewById(R.id.textView11);
+         textView13 = findViewById(R.id.textView13);
+         textView15 = findViewById(R.id.textView15);
+         textView19 = findViewById(R.id.textView19);
+
+        textView17.setSelected(true);
+        txt111.setSelected(true);
+        textView11.setSelected(true);
+        textView13.setSelected(true);
+        textView15.setSelected(true);
+        textView19.setSelected(true);
+
+        if (isConnection()){
+            new ServiceList_asyn().execute();
+        }
+
+
+
+      //  lyn_active_vtu = (LinearLayout) findViewById(R.id.lyn_active_vtu);
+       // frame_device_managment= (FrameLayout)findViewById(R.id.frame_device_managment);
+
+
+      /*  error_view = findViewById ( R.id.rel_error );
+         gifView1 = (GifView) error_view.findViewById(R.id.gif1);
+        error_frame  = findViewById ( R.id.error_frame );*/
 
         preferenceHelper = new PreferenceHelper(SearchVehicleWise.this);
 
-        msg_btn=(Button)findViewById(R.id.msg_btn);
-        frame_floating =(FrameLayout)findViewById(R.id.frame_floating);
+        msg_btn= findViewById(R.id.msg_btn);
+       // frame_floating =(FrameLayout)findViewById(R.id.frame_floating);
         txt1 = (TextView) findViewById(R.id.txt1);
         textView_version_name =(TextView)findViewById(R.id.textView_version_name);
-        lin_tot_install = (LinearLayout) findViewById(R.id.lin_tot_install);
+        lin_tot_install =  findViewById(R.id.lin_tot_install);
         tool_title = (MyTextView) findViewById(R.id.tool_title);
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
@@ -121,7 +169,7 @@ public class SearchVehicleWise extends AppCompatActivity {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(SearchVehicleWise.this, "Refresh", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchVehicleWise.this, "Records refreshed", Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override public void run() {
                         // Stop animation (This will be after 3 seconds)
@@ -136,7 +184,7 @@ public class SearchVehicleWise extends AppCompatActivity {
             }
         });
 
-        tool_title.setText("Search Vehicle");
+/*        tool_title.setText("Search Vehicle");
         tool_back_icon = (ImageView) findViewById(R.id.tool_back_icon);
         tool_back_icon.setVisibility(View.VISIBLE);
         tool_back_icon.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +192,7 @@ public class SearchVehicleWise extends AppCompatActivity {
             public void onClick(View v) {
                 onbackClick();
             }
-        });
+        });*/
       /*  try {
             new Authentication().execute();
         } catch (Exception e) {
@@ -159,7 +207,7 @@ public class SearchVehicleWise extends AppCompatActivity {
         }
 
 
-        serch_btn = (ImageView) findViewById(R.id.serch_btn);
+       // serch_btn = (ImageView) findViewById(R.id.serch_btn);
 
         search_btn_main = (Button) findViewById(R.id.search_btn_main);
         vehicle_textview = (TextView) findViewById(R.id.vehicle_textview);
@@ -171,7 +219,7 @@ public class SearchVehicleWise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String msg = vehicle_textview.getText().toString();
-                msg = "VTS " + msg;
+                msg = "VTS <Enter Vehicle No.>" + msg;
                 if (!TextUtils.isEmpty(msg)) {
                     String no = preferenceHelper.getUser_id();
                         no = "9968447229";
@@ -235,19 +283,19 @@ public class SearchVehicleWise extends AppCompatActivity {
         startActivity(inty);
     }
 });
-        serch_btn.setOnClickListener(new View.OnClickListener() {
+     /*   serch_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 search_btn_main.performClick();
             }
-        });
-        frame_floating.setOnClickListener(new View.OnClickListener() {
+        });*/
+      /*  frame_floating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent inty = new Intent(SearchVehicleWise.this, Orsac_feedback.class);
                 startActivity(inty);
             }
-        });
+        });*/
         lin_tot_install.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -265,14 +313,14 @@ public class SearchVehicleWise extends AppCompatActivity {
                 startActivity(inty);*/
             }
         });
-        frame_device_managment.setOnClickListener(new View.OnClickListener() {
+      /*  frame_device_managment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent inty = new Intent(SearchVehicleWise.this,Device_Manag_admin.class);
                 startActivity(inty);
 
             }
-        });
+        });*/
 
 
 /*
@@ -286,10 +334,95 @@ public class SearchVehicleWise extends AppCompatActivity {
         });
 */
 
+
+
     }
 
 
+    private class GetVersionCode extends AsyncTask<Void, String, String> {
+        String  currentVersion;
 
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            String newVersion = null;
+
+            try {
+                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=orsac.rosmerta.orsac_vehicle.android&&hl=en")
+                        .timeout(30000)
+                        .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                        .referrer("http://www.google.com")
+                        .get()
+                        .select(".hAyfc .htlgb")
+                        .get(7)
+                        .ownText();
+                return newVersion;
+            } catch (Exception e) {
+                Log.e("Exception", e.getMessage());
+                return newVersion;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String onlineVersion) {
+            super.onPostExecute(onlineVersion);
+            Log.d("update", "playstore version " + onlineVersion);
+            try {
+                currentVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+                //Toast.makeText(SplashActivity.this, "App version "+currentVersion, Toast.LENGTH_LONG).show();
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            if (onlineVersion != null && !onlineVersion.isEmpty()) {
+                if (!currentVersion.equalsIgnoreCase (  onlineVersion)) {
+                    getVersionCodeValue =false;
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(SearchVehicleWise.this);
+                    alertDialog.setTitle("Please update your app");
+                    alertDialog.setCancelable(false);
+                    alertDialog.setMessage("This app version is no longer supported. Please update your app from the Play Store.");
+                    alertDialog.setPositiveButton("UPDATE NOW", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface dialog, int which) {
+                            final String appPackageName = getPackageName();
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                                //finish();
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+
+                            }
+                        }
+                    });
+                    alertDialog.show();
+                }
+
+
+/*
+                if (Float.valueOf(currentVersion) < Float.valueOf(onlineVersion)) {
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(SearchVehicleWise.this);
+                    alertDialog.setTitle("Please update your app");
+                    alertDialog.setCancelable(false);
+                    alertDialog.setMessage("This app version is no longer supported. Please update your app from the Play Store.");
+                    alertDialog.setPositiveButton("UPDATE NOW", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface dialog, int which) {
+                            final String appPackageName = getPackageName();
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                            }
+                        }
+                    });
+                    alertDialog.show();
+                }
+*/
+            }
+        }
+    }
 
     class getStaticDynamicCount extends AsyncTask<String, String, String> {
 
@@ -391,7 +524,7 @@ public class SearchVehicleWise extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pbHeaderProgress = (ProgressBar) findViewById(R.id.progress_bar);
+           // pbHeaderProgress = (ProgressBar) findViewById(R.id.progress_bar);
             Log.d ( "Test Push","Test Push" );
             Log.d ( "Test Push","Test Push" );
         }
@@ -411,6 +544,14 @@ public class SearchVehicleWise extends AppCompatActivity {
 
             } catch (Exception e) {
                 e.printStackTrace();
+               /* gifView1.setVisibility(View.VISIBLE);
+                error_frame.setVisibility ( View.VISIBLE );
+                gifView1.play();
+                // gifView1.pause();
+                gifView1.setGifResource(R.drawable.erroranimennew);
+                gifView1.getGifResource();*/
+
+
             }
 
             return getResponse;//strStatus;
@@ -429,7 +570,6 @@ public class SearchVehicleWise extends AppCompatActivity {
 
                                 JSONObject jsonObj1 = jsonArray_.getJSONObject(i);
                                 Admin_model admin_bean = new Admin_model();
-
 
                                 String posi = String.valueOf(i + 1);
                                 admin_bean.setActive(jsonObj1.getString("active"));
@@ -454,16 +594,17 @@ public class SearchVehicleWise extends AppCompatActivity {
                             non_active.setText(total_i3ms  - total_active+"");
                             tot_avi.setVisibility(View.VISIBLE);
                             txt1.setVisibility(View.VISIBLE);
+                         /*   gifView1.setVisibility(View.GONE);
+                            error_frame.setVisibility ( View.GONE );*/
 
                         } catch (Exception ev) {
                             System.out.print(ev.getMessage());
                         }
 
-
                     } catch (Exception ev) {
                         System.out.print(ev.getMessage());
                     }
-                    pbHeaderProgress.setVisibility(View.GONE);
+               //     pbHeaderProgress.setVisibility(View.GONE);
                 }
             });
         }
@@ -503,7 +644,8 @@ public class SearchVehicleWise extends AppCompatActivity {
            */
 /* AndyUtils.showCustomProgressDialog(SearchVehicleWise.this,
                     "Fetching Information Please wait...", false, null);
-*//*
+*/
+    /*
 
         }
 
@@ -562,7 +704,8 @@ public class SearchVehicleWise extends AppCompatActivity {
                     tot_avi.setVisibility(View.VISIBLE);
                     txt1.setVisibility(View.VISIBLE);
                     */
-/* AndyUtils.removeCustomProgressDialog();*//*
+/* AndyUtils.removeCustomProgressDialog();*/
+    /*
 
                     // progressDialog.dismiss();
                 }
@@ -656,7 +799,6 @@ public class SearchVehicleWise extends AppCompatActivity {
             try {
                 if (tot_avi.getText().toString().equalsIgnoreCase("-----")){
                     new preProcessDash().execute();
-
                 }
 
             } catch (Exception e) {
@@ -665,6 +807,13 @@ public class SearchVehicleWise extends AppCompatActivity {
         }
         registerReceiver(internetConnectionReciever, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
 
+        if(getVersionCodeValue) {
+            try {
+                new GetVersionCode().execute();
+            } catch (Exception e) {
+                e.getMessage();
+            }
+        }
     }
 
     @Override
@@ -864,6 +1013,101 @@ public class SearchVehicleWise extends AppCompatActivity {
                     }
                 });
         dialog.show();
+    }
+
+    class ServiceList_asyn extends AsyncTask<String, String, String> {
+        int active_count = 0;
+        ArrayList<String> date_arr = new ArrayList<>();
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        protected String doInBackground(String... args) {
+
+            String getResponse = null;
+
+            try {
+                HttpClient httpclient = new DefaultHttpClient();
+                 HttpGet httppost = new HttpGet(preferenceHelper.getUrls() +"/"+UrlContants.GET_MOB_DASH_DATA_NEW+"?dataRange=6");
+                HttpResponse response = httpclient.execute(httppost);
+                getResponse = EntityUtils.toString(response.getEntity());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return getResponse;//strStatus;
+        }
+
+        protected void onPostExecute(final String getResponse) {
+
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    try {
+                        JSONArray jsonArrray  =  new JSONArray(getResponse);
+                        activeCountList = new ArrayList<>();
+                        activeCountList.clear();
+                        try {
+                            for (int i = 0; i < jsonArrray.length(); i++) {
+                                JSONObject jsonObject = jsonArrray.getJSONObject(i);
+
+                                date_arr.add(jsonObject.getString("date"));
+                              // active_value.add(jsonObject.getInt("active"));
+                            }
+                            String selectedDate;
+                            Set<String> set = new HashSet<String>(date_arr);
+                            ArrayList<String> Arr = new ArrayList<>();
+                            Arr.addAll(set);
+
+                                for(int j = 0 ;j<=Arr.size(); j++) {
+                                    selectedDate =Arr.get(j);
+                                    for (int i = 0; i < jsonArrray.length(); i++) {
+                                        JSONObject jsonObject = jsonArrray.getJSONObject(i);
+                                        if (selectedDate.equalsIgnoreCase(jsonObject.getString("date"))) {
+                                            active_count = active_count + jsonObject.getInt("active");
+                                        }
+                                    }
+                                    HashMap<String, Integer> mMaps = new HashMap<String, Integer>();
+                                    mMaps.put(selectedDate, active_count);
+                                    activeCountList.add(mMaps);
+                                    System.out.println("DDD  Date  " + selectedDate + "-- Total -- " + active_count);
+                                    active_count = 0;
+                                }
+                        } catch (Exception ev) {
+                            System.out.print(ev.getMessage());
+                        }
+                    } catch (Exception ev) {
+                        System.out.print(ev.getMessage());
+                    }
+                }
+            });
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog alertbox = new AlertDialog.Builder(this)
+                .setMessage("Do you want to exit application?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                    // do something when the button is clicked
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        finish();
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                    // do something when the button is clicked
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                })
+                .show();
     }
 
 }

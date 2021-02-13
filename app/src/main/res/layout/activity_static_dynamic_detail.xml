@@ -108,7 +108,7 @@
             android:background="@color/green" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -117,7 +117,7 @@
         android:layout_marginTop="2dp"
         android:layout_below="@+id/rela_titl"/>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/noPosts"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -139,5 +139,5 @@
             android:textSize="16sp"
             android:layout_gravity="center" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

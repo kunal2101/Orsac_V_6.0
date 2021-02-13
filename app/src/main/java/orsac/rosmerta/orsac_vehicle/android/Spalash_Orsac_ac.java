@@ -2,7 +2,6 @@ package orsac.rosmerta.orsac_vehicle.android;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,17 +15,18 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+
 import android.telephony.TelephonyManager;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +36,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+
+import static java.lang.Thread.sleep;
+
 
 /**
  * Created by Diwash Choudhary on 1/30/2017.
@@ -68,11 +71,15 @@ public class Spalash_Orsac_ac extends Activity {
     private boolean sentToSettings = false;
     PreferenceHelper preferenceHelper;
     //SharedPreferences sharedPreferences ;
+    TextView tv_orsac,tv_rtl;
+    ImageView iv_logo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trcak_spalsh_orsac_activity);
         //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        AnimationSpalash();
 
         permissionStatus = getSharedPreferences("permissionStatus", MODE_PRIVATE);
         rela_main=(RelativeLayout)findViewById(R.id.rela_main);
@@ -81,7 +88,7 @@ public class Spalash_Orsac_ac extends Activity {
         preferenceHelper = new PreferenceHelper(this);
 
         if(preferenceHelper.getUser_id().equalsIgnoreCase("null")){
-            ter_con();
+                 ter_con ();
         }
         // enableLoc();
         this.image = (ImageView) findViewById(R.id.splash_Rotate);
@@ -182,6 +189,26 @@ public class Spalash_Orsac_ac extends Activity {
         });*/
 
     }
+// this is using when we want animation on splash scrren
+    private void AnimationSpalash () {
+        tv_orsac = findViewById ( R.id.tv_orsac );
+        tv_rtl = findViewById ( R.id.tv_rtl );
+        iv_logo = findViewById ( R.id.iv_logo );
+
+        Animation animFadein, animslideup;
+        animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade_in);
+        animslideup = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_up);
+        final AnimationSet s = new AnimationSet(true);
+        s.setInterpolator(new AccelerateInterpolator ());
+        s.addAnimation(animslideup);
+        s.addAnimation(animFadein);
+        tv_orsac.startAnimation(s);
+        tv_rtl.startAnimation(s);
+        iv_logo.startAnimation(s);
+    }
+
     protected boolean isConnection() {
         ConnectivityManager manage = (ConnectivityManager) Spalash_Orsac_ac.this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = manage.getActiveNetworkInfo();
@@ -323,9 +350,26 @@ public class Spalash_Orsac_ac extends Activity {
                         if(preferenceHelper.getUser_id().equalsIgnoreCase("null")) {
                             ter_con();
                         }else {
-                            Intent inty = new Intent(getApplication(), SearchVehicleWise.class);
-                            startActivity(inty);
-                            finish();
+                            Thread timer= new Thread()
+                            {
+                                public void run()
+                                {
+                                    try {
+                                        sleep(5000);
+                                    }
+                                    catch (InterruptedException e) {
+                                        // TODO: handle exception
+                                        e.printStackTrace();
+                                    }
+                                    finally {
+
+                                        Intent inty = new Intent(getApplication(), SearchVehicleWise.class);
+                                        startActivity(inty);
+                                        finish();
+                                    }
+                                }
+                            };
+                            timer.start();
                         }
 
                     } catch (Exception ev) {
@@ -473,6 +517,12 @@ public class Spalash_Orsac_ac extends Activity {
 
                             try {
                                 sleep(5 * 1000);
+
+
+                            } catch (Exception e) {
+                                System.out.print(e.getMessage());
+                            }
+                            finally {
                                 if(preferenceHelper.getUser_id().equalsIgnoreCase("null")) {
                                     ter_con();
                                 }else {
@@ -481,9 +531,6 @@ public class Spalash_Orsac_ac extends Activity {
 
                                     finish();
                                 }
-
-                            } catch (Exception e) {
-                                System.out.print(e.getMessage());
                             }
                         }
                     };
@@ -563,7 +610,7 @@ public class Spalash_Orsac_ac extends Activity {
         background = new Thread() {
             public void run() {
                 try {
-                    TelephonyManager telephonyManager;
+                 /*   TelephonyManager telephonyManager;
                     telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
                     if (ActivityCompat.checkSelfPermission(Spalash_Orsac_ac.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -576,7 +623,7 @@ public class Spalash_Orsac_ac extends Activity {
                         // for ActivityCompat#requestPermissions for more details.
                         return;
                     }
-                    deviceId = telephonyManager.getDeviceId();
+                 *///   deviceId = telephonyManager.getDeviceId();
 
                     if (isConnection()) {
                         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.HONEYCOMB) {
@@ -608,12 +655,30 @@ public class Spalash_Orsac_ac extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                            /* SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean("agreed", true);*/
-                        preferenceHelper.putUser_id("true");
-                        //editor.commit();
-                        Intent inty = new Intent(getApplication(), SearchVehicleWise.class);
-                        startActivity(inty);
+                        Thread timer= new Thread()
+                        {
+                            public void run()
+                            {
+                                try {
+                                    sleep(5000);
+                                }
+                                catch (InterruptedException e) {
+                                    // TODO: handle exception
+                                    e.printStackTrace();
+                                }
+                                finally {
+                                    preferenceHelper.putUser_id("true");
+                                    //editor.commit();
 
-                        finish();
+                                    Intent inty = new Intent(getApplication(), SearchVehicleWise.class);
+                                    startActivity(inty);
+
+                                    finish();
+                                }
+                            }
+                        };
+                        timer.start();
+
                     }
                 })
                 .setNegativeButton("Disagree", new DialogInterface.OnClickListener() {
